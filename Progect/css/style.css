@@ -5,48 +5,50 @@
 	border: 0;
 }
 
-*,*:before,*:after {
+*, *:before, *:after {
 	box-sizing: border-box;
 }
 
-:focus,:active {
+body {
+   height: 100%;
+   width: 100%;
+   font-size: 100%;
+   color: #000;
+   font: 500 17px/1.4em 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-size: 55px;
+   line-height: 1.1;
+}
+
+:focus, :active {
    outline: none;
 }
 
-a:focus,a:active {
+a:focus, a:active {
    outline: none;
 }
 
-nav,footer,header,aside {
+nav, footer, header {
    display: block;
 }
 
-html,body {
-	height: 100%;
-	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 14px;
-}
-
-input,button,textarea {
+input, button {
    font-family:inherit;
-}
-
-input::-ms-clear {
-   display: none;
+   outline: none;
+   border: none;
+   background-color: transparent; 
 }
 
 button {
    cursor: pointer;
 }
 
-button::-moz-focus-inner {
-   padding:0;border:0;
-}
-
 a, a:visited {
    text-decoration: none;
+   color: inherit;
+   transition: all 0.5s ease;
 }
 
 a:hover {
@@ -58,9 +60,31 @@ ul li {
 }
 
 img {
-   vertical-align: top;
+   max-width: 100%;
+   object-fit: cover;
 }
 
-h1,h2,h3,h4,h5,h6 {
-   font-size:inherit;font-weight: 400;
+.container {
+	max-width: 1110px;
+   margin: 0 auto;
 }
+
+/* header */
+
+
+
+/* collection */
+
+
+
+/* advantages */
+
+
+
+/* slider */
+
+
+
+/* footer */
+
+
