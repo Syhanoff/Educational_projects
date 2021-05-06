@@ -74,7 +74,7 @@ img {
    padding-top: 17px;
 }
 
-.nav {
+.header-box {
    display: flex;
    font-size: 15px;
    padding-top: 34px;
@@ -88,29 +88,29 @@ img {
    display: block;
 }
 
-.menu {
+.header__nav {
    padding: 0 206px 0 146px;
 }
 
-.menu__list {
+.nav__list {
    display: flex;
 }
 
-.menu__item:hover {
+.nav__item a:hover, .nav__item_active a {
    color: #6E9C9F;
    font-weight: 700;
 }
 
-.menu__item:not(:last-child) {
+.nav__item:not(:last-child) {
    margin-right: 45px;
 }
 
-.header-tel {
+.header__tel {
    position: relative;
    padding: 0 79px 0 0;
 }
 
-.header-tel::before {
+.header__tel::before {
    content: '';
    position: absolute;
    display: block;
@@ -121,20 +121,19 @@ img {
    transition: all 0.5s ease;
 }
 
-.header-tel:hover::before {
+.header__tel:hover::before {
    content: '';
    background: url('../img/phone-hover.svg');
 }
 
-.header-bag {
+.header__bag {
    background: url('../img/shopping-bags.svg') no-repeat;
    height: 24px;
    width: 24px;
    position: relative;
-   display: inline-block;
 }
 
-.header-bag__sum {
+.header__bag_sum {
    background: #998E78;
    font-size: 9px;
    line-height: 1.0;
@@ -144,23 +143,38 @@ img {
    top: -10px;
    right: -10px;
    padding: 1px 5px 3px;
+   height: 15px;
+   width: 15px;
+
+
 }
 
-.offer {
+.header-wrapper {
+   display: flex;
+   align-items: center;
 }
-.offer__slider-wrapper {
+
+.header-wrapper__offer {
 }
-.offer__slides {
+.offer-wrapper {
 }
-.offer__slides_active {
+.offer-wrapper__slider {
 }
-.offer__title {
+.offer-wrapper__slides {
+   display: none;
 }
-.offer__intro {
+.offer-wrapper__slides_active {
+   display: block;
 }
-.offer__btn {
+.offer-wrapper__title {
+}
+.offer-wrapper__text {
+}
+.offer-wrapper__btn {
 }
 .btn {
+}
+.offer-wrapper__bullet {
 }
 .bullet-wrapper {
 }
@@ -168,19 +182,19 @@ img {
 }
 .bullet-wrapper__item_active {
 }
-.photo-block {
+.header-wrapper__img {
 }
-.photo-block__slider {
+.img-wrapper {
 }
-.photo-block__slides {
+.img-wrapper__slider {
 }
-.photo-block__slides_active {
+.img-wrapper__slides {
 }
-.alt= {
+.img-wrapper__slides_active {
 }
-.photo-block__item-second {
+.img-wrapper__second {
 }
-.photo-block__item-third {
+.img-wrapper__third {
 }
 
 
