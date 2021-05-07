@@ -69,9 +69,19 @@ img {
    margin: 0 auto;
 }
 
+.btn {
+   padding: 22px 50px;
+   background-color: #6E9C9F;
+   display: block;
+   font-weight: 400;
+   letter-spacing: 0.02em;
+   text-align: center;
+}
+
 /* header */
 .header {
    padding-top: 17px;
+   padding-bottom: 60px;
 }
 
 .header-box {
@@ -92,8 +102,11 @@ img {
    padding: 0 206px 0 146px;
 }
 
+.nav {
+}
+
 .nav__list {
-   display: flex;
+   display: flex; 
 }
 
 .nav__item a:hover, .nav__item_active a {
@@ -103,6 +116,9 @@ img {
 
 .nav__item:not(:last-child) {
    margin-right: 45px;
+}
+
+.nav__link {
 }
 
 .header__tel {
@@ -145,13 +161,13 @@ img {
    padding: 1px 5px 3px;
    height: 15px;
    width: 15px;
-
-
 }
 
 .header-wrapper {
    display: flex;
    align-items: center;
+   justify-content: space-between;
+   margin-top: 8px;
 }
 
 .header-wrapper__offer {
@@ -160,41 +176,94 @@ img {
 }
 .offer-wrapper__slider {
 }
+
 .offer-wrapper__slides {
    display: none;
 }
+
 .offer-wrapper__slides_active {
    display: block;
 }
+
 .offer-wrapper__title {
+   max-width: 565px;
+   width: 100%;
+   margin-bottom: 45px;
+   font-weight: 500;
 }
+
 .offer-wrapper__text {
+   max-width: 385px;
+   width: 100%;
+   margin-bottom: 52px;
+   text-align: right;
+   font-size: 20px;
+   font-weight: 400;
 }
-.offer-wrapper__btn {
+
+.offer-wrapper__btn-box {
+   display: flex;
+   margin-left: 75px;
 }
-.btn {
+
+.box-btn__nav {
+   height: 67px;
+   width: 67px;
+   background: rgba(110, 156, 159, 0.1) url('../img/arrow-button.svg') no-repeat center;
 }
+
+.box_btn__link {
+   color: #fff;
+}
+
 .offer-wrapper__bullet {
 }
 .bullet-wrapper {
+
 }
+
 .bullet-wrapper__item {
+   width: 30px;
+   height: 4px;
+   color: #D1D1D1;
+   margin-right: 12px;
 }
+
 .bullet-wrapper__item_active {
+   color: #000;
 }
+
+.bullet-wrapper__item:last-child {
+   margin-right: 0;
+}
+
 .header-wrapper__img {
+   position: relative;
 }
+
 .img-wrapper {
 }
 .img-wrapper__slider {
+
 }
 .img-wrapper__slides {
+   display: none;
 }
+
 .img-wrapper__slides_active {
+   display: block;
 }
+
 .img-wrapper__second {
+   position: absolute;
+   top: 123px;
+   right: -105px;
 }
+
 .img-wrapper__third {
+   position: absolute;
+   bottom: -60px;
+   left: -130px;
 }
 
 
