@@ -21,14 +21,13 @@ h1, h2, h3, h4, h5, h6 {
    font-weight: inherit;
 }
 
-h1 {
+h1, h2 {
    font-size: 55px;
    line-height: 1.1;
 }
 
 h2 {
    font-size: 40px;
-   line-height: 1.1;
 }
 
 h3 {
@@ -38,8 +37,6 @@ h3 {
 h4 {
    font-size: 20px;
 }
-
-
 
 :focus, :active {
    outline: none;
@@ -67,7 +64,8 @@ button {
 
 a, a:visited {
    text-decoration: none;
-   /* color: inherit; */
+   color: inherit;
+   font-weight: 400;
    transition: all 0.5s ease;
 }
 
@@ -92,14 +90,12 @@ img {
 .btn {
    padding: 22px 0;
    display: block;
-   font-weight: 400;
    letter-spacing: 0.02em;
    text-align: center;
 }
 
 .first-btn {
    background-color: #6E9C9F;
-   color: #fff;
 }
 .first-btn:hover {
    background-color: #509498;
@@ -109,7 +105,6 @@ img {
 }
 
 .second-btn {
-   color: #6E9C9F;
    border: 1px solid #6E9C9F;
 }
 .second-btn:hover {
@@ -124,7 +119,6 @@ img {
    border-bottom: 1px rgba(255, 255, 255, 0);
    padding-bottom: 5px;
 }
-
 .animate-link:hover {
    border-bottom: solid 1px #CEDEDF;
 }
@@ -141,7 +135,6 @@ img {
    font-size: 15px;
    padding-top: 51px;
    padding-bottom: 41px;
-   
 }
 
 .logo {
@@ -153,9 +146,6 @@ img {
 
 .header__nav {
    padding: 0 206px 0 146px;
-}
-
-.nav {
 }
 
 .nav__list {
@@ -171,14 +161,9 @@ img {
    margin-right: 45px;
 }
 
-.nav__link {
-   color: #000;
-}
-
 .header__tel {
    position: relative;
    padding: 0 79px 0 0;
-   color: #000;
 }
 
 .header__tel::before {
@@ -223,13 +208,6 @@ img {
    justify-content: space-between;
 }
 
-.header-wrapper__offer {
-}
-.offer-wrapper {
-}
-.offer-wrapper__slider {
-}
-
 .offer-wrapper__slides {
    display: none;
 }
@@ -259,6 +237,10 @@ img {
    margin-left: 75px;
    margin-bottom: 126px;
    margin-top: 52px;
+}
+
+.offer-wrapper__btn-box a {
+   color: #fff;
 }
 
 .box-btn__nav {
@@ -302,11 +284,6 @@ img {
    position: relative;
 }
 
-.img-wrapper {
-}
-.img-wrapper__slider {
-
-}
 .img-wrapper__slides {
    display: none;
 }
@@ -327,7 +304,6 @@ img {
    left: -130px;
 }
 
-
 /* !collection */
 .collection {
    padding-top: 130px;
@@ -340,9 +316,6 @@ img {
 .collection__wrapper {
    display: flex;
    justify-content: space-between;
-}
-
-.collection__item {
 }
 
 .item-card {
@@ -394,13 +367,14 @@ img {
    margin-right: 10px;
 }
 
-.item-card__price_discont {
-}
-
 .collection__btn {
    margin: 65px auto 0;
    max-width: 243px;
    width: 100%;
+}
+
+.collection a {
+   color: #6E9C9F;
 }
 
 
@@ -409,18 +383,12 @@ img {
    padding-top: 130px;
 }
 
-.advatages__title {
-}
-
-.section-title {
-}
 .advantages__item {
    margin-top: 92px;
    display: flex;
    justify-content: space-between;
 }
-.advantages__card {
-}
+
 .card-advantages {
    max-width: 350px;
    width: 100%;
@@ -435,11 +403,11 @@ img {
 .card-advantages__title {
    margin: 37px 0 24px;
 }
+
 .card-advantages__text {
    max-width: 302px;
    width: 100%;
 }
-
 
 /* !team */
 .team {
@@ -454,16 +422,12 @@ img {
    display: flex;
    justify-content: space-between;
    align-items: center;
-
 }
 
 .team__slider {
    position: relative;
    max-width: 729px;
    width: 100%;
-}
-
-.slider-inner {
 }
 
 .slider-inner__slides {
@@ -481,12 +445,10 @@ img {
    bottom: 61px;
 }
 
-.bullet-wrapper {
-}
-
 .bullet-wrapper__item_team-color {
    background: rgba(255, 255, 255, 0.36);
 }
+
 .bullet-wrapper__item_team-color_active {
    background: #FFFFFF;
 }
@@ -522,9 +484,6 @@ img {
    width: 100%;
 }
 
-.content-box {
-}
-
 .content-box__title {
    margin-bottom: 28px;
 }
@@ -535,9 +494,11 @@ img {
 
 .content-box__link {
    margin-top: 28px;
-   color: #6E9C9F;
 }
 
+.team__content a {
+   color: #6E9C9F;
+}
 
 /* !footer */
 .footer {
@@ -560,8 +521,6 @@ img {
 }
 
 .footer-link {
-   color: #000;
-   font-weight: 400;
    font-size: 13px;
 }
 
@@ -575,54 +534,31 @@ img {
    margin-bottom: 6px;
 }
 
-.footer__publik {
-}
-
 .footer-nav {
    display: block;
 }
 
-.footer__nav {
-}
-.nav {
-}
-.nav__list {
-}
-.nav__item {
-}
-.nav__item_active {
-}
-.nav__link {
-}
 .nav-clothes {
    margin: 39px 0 0 107px;
 }
-.nav-clothes__list {
-}
-.nav-clothes__item {
-}
-.nav-clothes__link {
-}
+
 .footer__contact {
    max-width: 158px;
    width: 100%;
    display: flex;
    flex-direction: column;
    align-items: flex-end;
+   font-size: 15px;
 }
 
 .footer__tel {
-   font-size: 15px;
-   font-weight: 400;
-   color: #000;
    margin-bottom: 30px;
 }
+
 .footer__mail {
-   font-size: 15px;
-   font-weight: 400;
-   color: #000;
    margin-bottom: 30px;
 }
+
 .footer__socials {
    display: flex;
    max-width: 90px;
