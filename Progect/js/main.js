@@ -3,6 +3,16 @@ $(document).ready(function() {
 })
 
 
+$(window).scroll(function(){
+   if($(this).scrollTop()>17){
+       $('.header-box').addClass('fixed');
+       $('.header').addClass('fixed');
+   }
+   else if ($(this).scrollTop()<140){
+       $('.header-box').removeClass('fixed');
+       $('.header').removeClass('fixed');
+   }
+});
 
 
 const anchors = document.querySelectorAll('.offer-wrapper__btn-box a[href="#collection"]')
@@ -19,3 +29,4 @@ for (let anchor of anchors) {
   })
   })
 }
+
