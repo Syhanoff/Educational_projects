@@ -22,12 +22,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-   font-size: 55px;
+   font-size: 3.45rem;
+   /* font-size: 55px; */
    line-height: 1.1;
 }
 
 h2 {
-   font-size: 40px;
+   /* font-size: 40px; */
+   font-size: 2.4rem;
 }
 
 h3 {
@@ -130,11 +132,26 @@ img {
    background: url('../img/Rectangle\ 1.png') right / 45% 100% no-repeat;
 }
 
+.header.fixed {
+   padding-top: 25px;
+}
+
 .header-box {
    display: flex;
    font-size: 15px;
    padding-top: 51px;
    padding-bottom: 41px;
+}
+
+.header-box.fixed {
+   position: fixed;
+   top: 0;
+   z-index: 99;
+   width: 100%;
+   background: #fff;
+   padding-top: 34px;
+   padding-bottom: 33px;
+   transition: all 0.5s ease;
 }
 
 .logo {
