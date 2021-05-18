@@ -70,7 +70,7 @@
             <div class="header-wrapper__offer offer-wrapper">
                <div class="offer-wrapper__slider">
                   <div class="offer-wrapper__slides offer-wrapper__slides_active">
-                     <h1 class="offer-wrapper__title">
+                     <h1 class="offer-wrapper__title title">
                         Новые поступления в этом сезоне
                      </h1>
                      <p class="offer-wrapper__text">
@@ -79,7 +79,7 @@
                      </p>
                   </div>
                   <div class="offer-wrapper__slides">
-                     <h1 class="offer-wrapper__title">
+                     <h1 class="offer-wrapper__title title">
                         Что-то новенькое. Мы заждались тебя.
                      </h1>
                      <p class="offer-wrapper__text">
@@ -88,7 +88,7 @@
                      </p>
                   </div>
                   <div class="offer-wrapper__slides">
-                     <h1 class="offer-wrapper__title">
+                     <h1 class="offer-wrapper__title title">
                         Включай новый сезон с WOMAZING
                      </h1>
                      <p class="offer-wrapper__text">
@@ -133,7 +133,7 @@
                      <img src="./img/arrow-overlay.svg" alt="" class="item-card__overlay-work">
                   </a>
                </div>
-               <h4 class="item-cart__title">Футболка USA</h4>
+               <h4 class="item-cart__title title-card">Футболка USA</h4>
                <span class="item-card__price item-card__price_no-discont">$229</span>
                <span class="item-card__price item-card__price_discont">$129</span>
             </div>
@@ -144,7 +144,7 @@
                      <img src="./img/arrow-overlay.svg" alt="" class="item-card__overlay-work">
                   </a>
                </div>
-               <h4 class="item-cart__title">Купальник Glow</h4>
+               <h4 class="item-cart__title title-card">Купальник Glow</h4>
                <span class="item-card__price">$129</span>
             </div>
             <div class="collection__item item-card">
@@ -154,7 +154,7 @@
                      <img src="./img/arrow-overlay.svg" alt="" class="item-card__overlay-work">
                   </a>
                </div>
-               <h4 class="item-cart__title">Свитшот Sweet Shot</h4>
+               <h4 class="item-cart__title title-card">Свитшот Sweet Shot</h4>
                <span class="item-card__price">$129</span>
             </div>
          </div>
@@ -173,7 +173,7 @@
                <a href="#" class="card-advantages__icon">
                   <img src="./img/quality.svg" alt="" class="icon-img">
                </a>
-               <h3 class="card-advantages__title">
+               <h3 class="card-advantages__title subtitle">
                   Качество
                </h3>
                <p class="card-advantages__text">
@@ -181,7 +181,7 @@
                </p>
             </div>
             <div class="advantages__card card-advantages">
-               <a href="#" class="card-advantages__icon">
+               <a href="#" class="card-advantages__icon subtitle">
                   <img src="./img/gear.svg" alt="" class="icon-img">
                </a>
                <h3 class="card-advantages__title">
@@ -193,7 +193,7 @@
                </p>
             </div>
             <div class="advantages__card card-advantages">
-               <a href="#" class="card-advantages__icon">
+               <a href="#" class="card-advantages__icon subtitle">
                   <img src="./img/hand.svg" alt="" class="icon-img">
                </a>
                <h3 class="card-advantages__title">
@@ -229,7 +229,7 @@
                <button type="button" class="team__slider-control team__slider-control_next"></button>
             </div>
             <div class="team__content content-box">
-               <h3 class="content-box__title">
+               <h3 class="content-box__title subtitle">
                   Для каждой
                </h3>
                <p class="content-box__text">
@@ -310,11 +310,17 @@
    </footer>
    <div class="wrapper-modal" id="wrapper-modal">
       <div class="modal-window" id="modal-window">
-         <h3 class="modal-window__title">Заказать обратный звонок</h3>
+         <h3 class="modal-window__title subtitle">Заказать обратный звонок</h3>
          <form action="#" class="modal-window__form form-wrapper">
-            
-         
+            <input type="text" name="name" class="form-wrapper__input" id="" placeholder="Имя" required>
+            <input type="email" name="email" class="form-wrapper__input" id=""  placeholder="E-mail" required >
+            <input type="tel" name="phone" class="form-wrapper__input" id=""  placeholder="Телефон" required>
+            <button type="submit" class="form-wrapper__btn first-btn btn">Заказать звонок</button>
          </form>
+      </div>
+      <div class="success-window">
+         <h3 class="success-window__title subtitle">Отлично! Мы скоро вам перезвоним.</h3>
+         <button type="submit" class="success-window__btn second-btn btn">Закрыть</button>
       </div>
    </div>
    <script src="js/jquery-3.6.0.min.js"></script>
