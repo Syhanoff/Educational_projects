@@ -69,7 +69,7 @@
          <div class="header-wrapper">
             <div class="header-wrapper__offer offer-wrapper">
                <div class="offer-wrapper__slider">
-                  <div class="offer-wrapper__slides offer-wrapper__slides_active">
+                  <div class="offer-wrapper__slides active">
                      <h1 class="offer-wrapper__title title">
                         Новые поступления в этом сезоне
                      </h1>
@@ -104,13 +104,13 @@
                </div>
                <div class="offer-wrapper__bullet bullet-wrapper">
                   <button type="button" class="bullet-wrapper__item bullet-wrapper__item_offer-color"></button>
-                  <button type="button" class="bullet-wrapper__item bullet-wrapper__item_offer-color_active"></button>
+                  <button type="button" class="bullet-wrapper__item bullet-wrapper__item_offer-color active"></button>
                   <button type="button" class="bullet-wrapper__item bullet-wrapper__item_offer-color"></button>
                </div>
             </div>
             <div class="header-wrapper__img img-wrapper">
                <div class="img-wrapper__slider">
-                  <img src="img/photo-main1.jpg" class="img-wrapper__slides img-wrapper__slides_active alt="">
+                  <img src="img/photo-main1.jpg" class="img-wrapper__slides active alt="">
                   <img src=" img/photo-main2.jpg" class="img-wrapper__slides alt="">
                   <img src=" img/photo-main3.jpg" class="img-wrapper__slides alt="">
                </div>
@@ -215,18 +215,18 @@
          </h2>
          <div class="team__wrapper">
             <div class="team__slider">
-               <div class="slider-inner">
-                  <img src="./img/photo-team1.jpg" alt="" class="slider-inner__slides slider-inner__slides_active">
-                  <img src="./img/photo-team2.jpg" alt="" class="slider-inner__slides">
-                  <img src="./img/photo-team3.jpg" alt="" class="slider-inner__slides">
+               <div class="slider-team">
+                  <img src="./img/photo-team1.jpg" alt="" class="team__slides active">
+                  <img src="./img/photo-team2.jpg" alt="" class="team__slides">
+                  <img src="./img/photo-team3.jpg" alt="" class="team__slides">
                </div>
                <div class="team__bullet bullet-wrapper">
                   <button type="button" class="bullet-wrapper__item bullet-wrapper__item_team-color"></button>
-                  <button type="button" class="bullet-wrapper__item bullet-wrapper__item_team-color_active"></button>
+                  <button type="button" class="bullet-wrapper__item bullet-wrapper__item_team-color active"></button>
                   <button type="button" class="bullet-wrapper__item bullet-wrapper__item_team-color"></button>
                </div>
-               <button type="button" class="team__slider-control team__slider-control_prev"></button>
-               <button type="button" class="team__slider-control team__slider-control_next"></button>
+               <button type="button" class="team__slider-control team__slider-control_prev" id='btn-prev'></button>
+               <button type="button" class="team__slider-control team__slider-control_next" id='btn-next'></button>
             </div>
             <div class="team__content content-box">
                <h3 class="content-box__title subtitle">
@@ -313,8 +313,8 @@
          <h3 class="modal-window__title subtitle">Заказать обратный звонок</h3>
          <form action="#" class="modal-window__form form-wrapper">
             <input type="text" name="name" class="form-wrapper__input" id="" placeholder="Имя" required>
-            <input type="email" name="email" class="form-wrapper__input" id=""  placeholder="E-mail" required >
-            <input type="tel" name="phone" class="form-wrapper__input" id=""  placeholder="Телефон" required>
+            <input type="email" name="email" class="form-wrapper__input" id="" placeholder="E-mail" required>
+            <input type="tel" name="phone" class="form-wrapper__input" id="" placeholder="Телефон" required>
             <button type="submit" class="form-wrapper__btn first-btn btn">Заказать звонок</button>
          </form>
       </div>
@@ -324,7 +324,7 @@
       </div>
    </div>
    <script src="js/jquery-3.6.0.min.js"></script>
-   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
    <script src="js/main.js"></script>
 </body>
 

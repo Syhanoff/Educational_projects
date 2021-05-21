@@ -228,7 +228,7 @@ img {
    display: none;
 }
 
-.offer-wrapper__slides_active {
+.offer-wrapper__slides.active {
    display: block;
 }
 
@@ -292,7 +292,7 @@ img {
    background-color: #D1D1D1;
 }
 
-.bullet-wrapper__item_offer-color_active {
+.bullet-wrapper__item_offer-color.active {
    background-color: #000;
 }
 
@@ -304,7 +304,7 @@ img {
    display: none;
 }
 
-.img-wrapper__slides_active {
+.img-wrapper__slides.active {
    display: block;
 }
 
@@ -446,11 +446,11 @@ img {
    width: 100%;
 }
 
-.slider-inner__slides {
+.team__slides {
    display: none;
 }
 
-.slider-inner__slides_active {
+.team__slides.active {
    display: block;
 }
 
@@ -465,7 +465,7 @@ img {
    background: rgba(255, 255, 255, 0.36);
 }
 
-.bullet-wrapper__item_team-color_active {
+.bullet-wrapper__item_team-color.active {
    background: #FFFFFF;
 }
 
