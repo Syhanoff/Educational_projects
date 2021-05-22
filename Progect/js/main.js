@@ -14,7 +14,7 @@ $(window).scroll(function(){
 });
 
 
-const anchors = document.querySelectorAll('.offer-wrapper__btn-box a[href="#collection"]')
+const anchors = document.querySelectorAll('.offer__btn-wrapper a[href="#collection"]')
 
 for (let anchor of anchors) {
    anchor.addEventListener('click', function (e) {
@@ -28,107 +28,99 @@ for (let anchor of anchors) {
 }
 
 //Slides
-const slidesHeader = document.querySelectorAll('.offer-wrapper__slides'),
-      slidesHeaderImg = document.querySelectorAll('.img-wrapper__slides'),
+const slidesHeader = document.querySelectorAll('.offer__slides'),
+      slidesHeaderImg = document.querySelectorAll('.img__slides'),
       slidesTeam = document.querySelectorAll('.team__slides'),
-      bulletHeader = document.querySelectorAll('.bullet-wrapper__item_offer-color'),
-      bulletTeam = document.querySelectorAll('.bullet-wrapper__item_team-color'),
+      bulletHeader = document.querySelectorAll('.offer__bullets'),
+      bulletTeam = document.querySelectorAll('.team__bullets'),
       btnPrev = document.getElementById('btn-prev'),
       btnNext = document.getElementById('btn-next');
 
 let index = 0;
 
-const activeSlide = n => {
+const activeHeaderSlide = n => {
+   for(offer__slides of slidesHeader) {
+      offer__slides.classList.remove('active');
+   }
+   slidesHeader[n].classList.add('active');
+}
+
+const activeHeaderImgSlide = n => {
+   for(img__slides of slidesHeaderImg) {
+      img__slides.classList.remove('active');
+   }
+   slidesHeaderImg[n].classList.add('active');
+}
+
+const activeHeaderBullet = n => {
+   for(offer__bullets of bulletHeader) {
+      offer__bullets.classList.remove('active');
+   }
+   bulletHeader[n].classList.add('active');
+}
+
+const prepareCurrentHeaderSlide = i => {
+   activeHeaderSlide(i);
+   activeHeaderImgSlide(i);
+   activeHeaderBullet(i);
+}
+
+bulletHeader.forEach((item, indexBullet) => {
+   item.addEventListener('click', () => {
+      index = indexBullet;
+      prepareCurrentHeaderSlide(index);
+   })
+})
+
+const activeTeamSlide = n => {
    for(team__slides of slidesTeam) {
       team__slides.classList.remove('active');
    }
    slidesTeam[n].classList.add('active');
 }
 
+const activeTeamBullet = n => {
+   for(team__bullets of bulletTeam) {
+      team__bullets.classList.remove('active');
+   }
+   bulletTeam[n].classList.add('active');
+}
+
+const prepareCurrentTeamSlide = i => {
+   activeTeamSlide(i);
+   activeTeamBullet(i);
+}
+
 const nextSlide = n => {
    if(index == slidesTeam.length - 1) {
       index = 0;
-      activeSlide(index);
+      prepareCurrentTeamSlide(index);
    }  else {
       index++;
-      activeSlide(index);
+      prepareCurrentTeamSlide(index);
    }
 }
 
 const prevSlide = n => {
-
+   if(index == 0) {
+      index = slidesTeam.length - 1;
+      prepareCurrentTeamSlide(index);
+   }  else {
+      index--;
+      prepareCurrentTeamSlide(index);
+   }
 }
 
 btnNext.addEventListener('click', nextSlide);
 btnPrev.addEventListener('click', prevSlide);
 
+bulletTeam.forEach((item, indexBullet) => {
+   item.addEventListener('click', () => {
+      index = indexBullet;
+      prepareCurrentTeamSlide(index);
+   })
+})
 
+const interval = setInterval(nextSlide, 2500);
 
-
-// const activeSlide = n => {
-//    for(slide of slides){
-//       slide.classList.remove('offer-wrapper__slides_active');
-//    }
-//    slides[n].classList.add('offer-wrapper__slides_active');
-//    }
-
-
-
-// const swiper = new Swiper('.offer-wrapper__slider', {
-//    speed: 400,
-//    spaceBetween: 100,
-//  });
-
-//  const prev = document.getElementById('btn-prev'),
-//  next = document.getElementById('btn-next'),
-
-
-slidesWrap = document.querySelectorAll('.offer-wrapper__slider');
-
-
-
-
-
-// const activeDot = n => {
-// for(dot of dots){
-//   dot.classList.remove('bullet-wrapper__item_offer-color_active');
-// }
-// dots[n].classList.add('bullet-wrapper__item_offer-color_active');
-// }
-
-// const prepareCurrentSlide = ind => {
-// activeSlide(ind);
-// activeDot(ind);
-// }
-
-// const nextSlide = () => {
-// if(index == slides.length - 1) {
-//   index = 0;
-//   prepareCurrentSlide(index);
-// }else {
-//      index++;
-//      prepareCurrentSlide(index);
-// }	
-// }
-
-// const prevSlide = () => {
-// if(index == 0) {
-//   index = slides.length - 1;
-//   prepareCurrentSlide(index);
-// }else {
-//      index--;
-//      prepareCurrentSlide(index);
-//   }	
-// }
-
-// dots.forEach((item, indexDot) => {
-// item.addEventListener('click', () => {
-//   index = indexDot;
-//   prepareCurrentSlide(index);
-// })
-// })
-
-// next.addEventListener('click', nextSlide)
-// prev.addEventListener('click', prevSlide)
-
-// const interval = setInterval(nextSlide, 2500);
+//Modal

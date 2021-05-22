@@ -224,15 +224,15 @@ img {
    justify-content: space-between;
 }
 
-.offer-wrapper__slides {
+.offer__slides {
    display: none;
 }
 
-.offer-wrapper__slides.active {
+.offer__slides.active {
    display: block;
 }
 
-.offer-wrapper__title {
+.offer-slides__title {
    max-width: 565px;
    width: 100%;
    margin-top: 145px;
@@ -240,7 +240,7 @@ img {
    font-weight: 500;
 }
 
-.offer-wrapper__text {
+.offer-slides__text {
    max-width: 385px;
    width: 100%;
    text-align: right;
@@ -248,14 +248,14 @@ img {
    font-weight: 400;
 }
 
-.offer-wrapper__btn-box {
+.offer__btn-wrapper {
    display: flex;
    margin-left: 75px;
    margin-bottom: 126px;
    margin-top: 52px;
 }
 
-.offer-wrapper__btn-box a {
+.offer__btn-wrapper a {
    color: #fff;
 }
 
@@ -270,29 +270,26 @@ img {
    width: 100%;
 }
 
-.offer-wrapper__bullet {
+.offer__bullet-wrapper {
    margin-left: 271px;
-}
-
-.bullet-wrapper {
    display: flex;
 }
 
-.bullet-wrapper__item {
+.bullet-item {
    width: 30px;
    height: 4px;
    margin-right: 12px;
 }
 
-.bullet-wrapper__item:last-child {
+.bullet-item:last-child {
    margin-right: 0;
 }
 
-.bullet-wrapper__item_offer-color {
+.offer__bullets {
    background-color: #D1D1D1;
 }
 
-.bullet-wrapper__item_offer-color.active {
+.offer__bullets.active {
    background-color: #000;
 }
 
@@ -300,11 +297,11 @@ img {
    position: relative;
 }
 
-.img-wrapper__slides {
+.img__slides {
    display: none;
 }
 
-.img-wrapper__slides.active {
+.img__slides.active {
    display: block;
 }
 
@@ -454,18 +451,18 @@ img {
    display: block;
 }
 
-.team__bullet {
+.team__bullet-wrapper {
    position: absolute;
    left: 50%;
    transform: translateX(-50%);
    bottom: 61px;
 }
 
-.bullet-wrapper__item_team-color {
+.team__bullets {
    background: rgba(255, 255, 255, 0.36);
 }
 
-.bullet-wrapper__item_team-color.active {
+.team__bullets.active {
    background: #FFFFFF;
 }
 
