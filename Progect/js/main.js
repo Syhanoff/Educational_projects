@@ -17,20 +17,17 @@ $(window).scroll(function(){
 const anchors = document.querySelectorAll('.offer-wrapper__btn-box a[href="#collection"]')
 
 for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-  e.preventDefault()
-   
-  const blockID = anchor.getAttribute('href').substr(1)
-   
-  document.getElementById(blockID).scrollIntoView({
-  behavior: 'smooth',
-  block: 'start'
-  })
-  })
+   anchor.addEventListener('click', function (e) {
+   e.preventDefault()
+   const blockID = anchor.getAttribute('href').substr(1)
+   document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth', 
+      block: 'start'
+      })
+   })
 }
 
 //Slides
-
 const slidesHeader = document.querySelectorAll('.offer-wrapper__slides'),
       slidesHeaderImg = document.querySelectorAll('.img-wrapper__slides'),
       slidesTeam = document.querySelectorAll('.team__slides'),
@@ -38,7 +35,6 @@ const slidesHeader = document.querySelectorAll('.offer-wrapper__slides'),
       bulletTeam = document.querySelectorAll('.bullet-wrapper__item_team-color'),
       btnPrev = document.getElementById('btn-prev'),
       btnNext = document.getElementById('btn-next');
-
 
 let index = 0;
 
@@ -48,8 +44,6 @@ const activeSlide = n => {
    }
    slidesTeam[n].classList.add('active');
 }
-
-
 
 const nextSlide = n => {
    if(index == slidesTeam.length - 1) {
@@ -61,7 +55,12 @@ const nextSlide = n => {
    }
 }
 
+const prevSlide = n => {
+
+}
+
 btnNext.addEventListener('click', nextSlide);
+btnPrev.addEventListener('click', prevSlide);
 
 
 
