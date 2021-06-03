@@ -205,7 +205,7 @@ img {
    position: relative;
 }
 
-.header__bag_sum {
+.filling {
    background: #998E78;
    font-size: 9px;
    line-height: 1.0;
@@ -583,20 +583,36 @@ img {
 }
 
 .instagram {
-   background: url('../img/icon-instagram.svg') no-repeat;
+   background: url('../img/icon-instagram.svg') no-repeat center;
    width: 22px;
    height: 22px;
+   transition: all 0.5s ease;
 }
+
+.instagram:hover {
+   background: url('../img/instagram-act.svg') no-repeat;
+}
+
 .facebook {
    background: url('../img/icon-facebook.svg') no-repeat;
    width: 21px;
    height: 21px;
+   transition: all 0.5s ease;
 }
+.facebook:hover {
+   background: url('../img/facebook-act.svg') no-repeat;
+}
+
 .twitter {
    background: url('../img/icon-twitter.svg') no-repeat;
    width: 23px;
    height: 23px;
+   transition: all 0.5s ease;
 }
+.twitter:hover {
+   background: url('../img/twitter-act.svg') no-repeat;
+}
+
 .payments {
    background: url('../img/visa-mastercard\ 1.png') no-repeat center / cover;
    width: 68px;
@@ -650,6 +666,15 @@ img {
    color: #FFF;
 }
 
+.modal-window__btn-close {
+   background: url('../img/close-overlay.svg') no-repeat;
+   width: 16px;
+   height: 16px;
+   position: absolute;
+   right: 32px;
+   top: 32px;
+}
+
 .success-window {
    position: absolute;
    top: 50%;
@@ -657,6 +682,7 @@ img {
    transform: translate(-50%, -50%);
    background-color: #fff;
    padding: 70px;
+   display: none;
 }
 
 .success-window__title {

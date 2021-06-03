@@ -4,12 +4,12 @@ $(document).ready(function() {
 
 $(window).scroll(function(){
    if($(this).scrollTop()>1){
-       $('.header-box').addClass('fixed');
-       $('.header').addClass('fixed');
+      $('.header-box').addClass('fixed');
+      $('.header').addClass('fixed');
    }
    else if ($(this).scrollTop()<140){
-       $('.header-box').removeClass('fixed');
-       $('.header').removeClass('fixed');
+      $('.header-box').removeClass('fixed');
+      $('.header').removeClass('fixed');
    }
 });
 
@@ -124,3 +124,31 @@ bulletTeam.forEach((item, indexBullet) => {
 const interval = setInterval(nextSlide, 2500);
 
 //Modal
+const btnOpen = document.getElementById('modal-open');
+const btnClose = document.getElementById('modal-close');
+const modalWrap = document.getElementById('wrapper-modal');
+const successBtnClose = document.getElementById('btn-close');
+const modalWindow = document.querySelector('modal-window');
+
+btnOpen.addEventListener('click', e => {
+   console.log(e);
+   modalWrap.classList.add('active');
+})
+
+
+
+
+
+const closModal = () => {
+	modalWrap.classList.remove('active');
+}
+
+modalWrap.addEventListener('click', closModal);
+btnClose.addEventListener('click', closModal);
+successBtnClose.addEventListener('click', closModal);
+
+for(let modalWindow of modalWrap.children) {
+	modalWindow.addEventListener('click', event=> {
+		event.stopPropagation();
+	} )
+}
