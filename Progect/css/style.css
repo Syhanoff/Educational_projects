@@ -173,13 +173,14 @@ img {
    font-weight: 700;
 }
 
-.nav__item:not(:last-child) {
+.nav__item:not(:last-of-type) {
    margin-right: 45px;
 }
 
 .header__tel {
    position: relative;
    padding: 0 79px 0 0;
+   width: max(100%, 128px);
 }
 
 .header__tel::before {
@@ -202,7 +203,7 @@ img {
    background: url('../img/shopping-bags.svg') no-repeat;
    height: 24px;
    width: 24px;
-   position: relative;
+   position: relative; 
 }
 
 .filling {
@@ -217,6 +218,15 @@ img {
    padding: 1px 5px 3px;
    height: 15px;
    width: 15px;
+}
+
+.menu-close {
+   display: none;
+   position: absolute;
+}
+
+.hamburger {
+   display: none;
 }
 
 .header-wrapper {
@@ -693,3 +703,25 @@ img {
    width: min(100%, 168px);
    color: #6E9C9F;
 }
+
+
+
+
+
+
+@media screen and (max-width: 991px) {
+	.hamburger {
+		display: block;
+	}
+
+   .header__nav {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 181px;
+      height: 252px;
+      right: 0;
+      top: 55px;
+      padding: 55px 5px 20px 35px;
+   }

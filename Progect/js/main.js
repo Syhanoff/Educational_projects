@@ -1,5 +1,5 @@
-$(document).ready(function() {
-})
+// $(document).ready(function() {
+// })
 
 
 $(window).scroll(function(){
@@ -26,6 +26,7 @@ for (let anchor of anchors) {
       })
    })
 }
+
 
 //Slides
 const slidesHeader = document.querySelectorAll('.offer__slides'),
@@ -134,10 +135,6 @@ btnOpen.addEventListener('click', e => {
    console.log(e);
    modalWrap.classList.add('active');
 })
-
-
-
-
 
 const closModal = () => {
 	modalWrap.classList.remove('active');
