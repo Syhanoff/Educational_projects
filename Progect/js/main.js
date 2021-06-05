@@ -155,6 +155,19 @@ for(let modalWindow of modalWrap.children) {
 
 
 // Validate
+
+
+$('[data-submit]').on('click', function(e) {
+   e.preventDefault();
+   $(this).parent('form').submit();
+})
+
+$.validator.addMethod("regex", function(value, element, regexp) {
+   var regExsp = new RegExp(regexp);
+   return regExsp.test(value);
+},"Пожалуйста, проверьте поле ввода"
+);
+
 $('form').validate({
    rules : {
       name : {
@@ -185,11 +198,40 @@ $('form').validate({
          required: 'Поле обязательно для заполнения',
          email: 'Неверный формат E-mail'
          }
-      }
+      },
+      submitHandler: function(form) {
+         var $form = $(form);
+         var $formId = $(form).attr('id');
+         switch ($formId) {
+            case'form1':
+               $.ajax({
+                  type: 'POST',
+                  url: $form.attr('action'),
+                  data: $form.serialize()
+               })
+               .done(function() {
+                  console.log('Success');
+               })
+               .fail(function() {
+                  console.log('Fail');
+               })
+               .always(function() {
+                  console.log('Always');
+                  setTimeout(function() {
+                     $form.trigger('reset');
+                     $('.modal-window').fadeOut();
+                     }, 1000);
+                  setTimeout(function() {
+                     $('#message').fadeIn();
+                     }, 1500);
+                  setTimeout(function() {
+                     $('.wrapper-modal, .success-window').fadeIn ();
+                     }, 1700);
+               });
+            break;
+         }
+      return false;
+   }
    });
 
-$.validator.addMethod("regex", function(value, element, regexp) {
-   var regExsp = new RegExp(regexp);
-   return regExsp.test(value);
-},"Пожалуйста, проверьте поле ввода"
-);
+

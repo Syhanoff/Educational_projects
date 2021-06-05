@@ -315,15 +315,15 @@
    <div class="wrapper-modal" id="wrapper-modal">
       <div class="modal-window">
          <h3 class="modal-window__title subtitle">Заказать обратный звонок</h3>
-         <form action="#" class="form form-wrapper">
+         <form action="#" class="form form-wrapper" id="form1">
             <input type="text" name="name" class="form-wrapper__input" id="" placeholder="Имя" required>
             <input type="email" name="email" class="form-wrapper__input" id="" placeholder="E-mail" required>
             <input type="tel" name="phone" class="form-wrapper__input" id="" placeholder="Телефон" required>
-            <button type="submit" class="form-wrapper__btn first-btn btn">Заказать звонок</button>
+            <button type="submit" class="form-wrapper__btn first-btn btn" data-submit>Заказать звонок</button>
          </form>
          <button type="button" class="modal-window__btn-close" id="modal-close"></button>
       </div>
-      <div class="success-window">
+      <div class="success-window" id="message">
          <h3 class="success-window__title subtitle">Отлично! Мы скоро вам перезвоним.</h3>
          <button type="submit" class="success-window__btn second-btn btn" id="btn-close">Закрыть</button>
       </div>
