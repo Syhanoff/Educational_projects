@@ -47,9 +47,9 @@ a:focus, a:active {
    outline: none;
 }
 
-nav, footer, header {
+/* nav, footer, header {
    display: block;
-}
+} */
 
 input, button {
    font-family:inherit;
@@ -180,7 +180,6 @@ img {
 .header__tel {
    position: relative;
    padding: 0 79px 0 0;
-   width: max(100%, 128px);
 }
 
 .header__tel::before {
@@ -653,14 +652,14 @@ img {
    transform: translate(-50%, -50%);
    padding: 70px;
    background-color: #fff;
-}
+} 
 
 .modal-window__title {
    margin: 0 auto 35px;
 }
 
 .form-wrapper :not(:last-child) {
-   margin-bottom: 35px;
+   margin-top: 35px;
 }
 
 .form-wrapper__input {
@@ -674,6 +673,7 @@ img {
 .form-wrapper__btn {
    width: min(100%, 351px);
    color: #FFF;
+   margin-top: 35px;
 }
 
 .modal-window__btn-close {

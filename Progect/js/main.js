@@ -2,6 +2,7 @@
 // })
 
 
+// Sticky menu
 $(window).scroll(function(){
    if($(this).scrollTop()>1){
       $('.header-box').addClass('fixed');
@@ -14,6 +15,7 @@ $(window).scroll(function(){
 });
 
 
+// Anchor link
 const anchors = document.querySelectorAll('.offer__btn-wrapper a[href="#collection"]')
 
 for (let anchor of anchors) {
@@ -124,6 +126,7 @@ bulletTeam.forEach((item, indexBullet) => {
 
 const interval = setInterval(nextSlide, 2500);
 
+
 //Modal
 const btnOpen = document.getElementById('modal-open');
 const btnClose = document.getElementById('modal-close');
@@ -149,3 +152,44 @@ for(let modalWindow of modalWrap.children) {
 		event.stopPropagation();
 	} )
 }
+
+
+// Validate
+$('form').validate({
+   rules : {
+      name : {
+         required : true,
+         regex : "[A-Za-z]{1,32}"
+         },
+      email : {
+         required : true,
+         email: true
+         },
+      phone : {
+         required : true,
+         digits : true,
+         minlength: 10,
+         maxlength: 11,
+         regex : "[0-9]+"
+         }
+      },
+   messages: {
+      name: {
+         required: 'Поле обязательно для заполнения',
+         },
+      tel: {
+         required: 'Поле обязательно для заполнения',
+         regex: 'Телефон может содержать символы + - ()'
+         },
+      email: {
+         required: 'Поле обязательно для заполнения',
+         email: 'Неверный формат E-mail'
+         }
+      }
+   });
+
+$.validator.addMethod("regex", function(value, element, regexp) {
+   var regExsp = new RegExp(regexp);
+   return regExsp.test(value);
+},"Пожалуйста, проверьте поле ввода"
+);
