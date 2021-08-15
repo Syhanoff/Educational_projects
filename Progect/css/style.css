@@ -156,7 +156,7 @@ img {
 .logo {
    background: url('../img/logo.svg');
    height: 25px;
-   width: 139px;
+   min-width: 139px;
    display: block;
 }
 
@@ -180,6 +180,7 @@ img {
 .header__tel {
    position: relative;
    padding: 0 79px 0 0;
+   white-space: nowrap;
 }
 
 .header__tel::before {
@@ -705,23 +706,53 @@ img {
 }
 
 
-
+/*  Responsive  */
+/* Extra Large: ≥1200px */
+@media (max-width: 1200px) {
+   .container {
+      max-width: 1140px;
+      }
+   }
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+   .container {
+      max-width: 960px;
+      }
+   }
+/* Medium: 768px - 991px */
+@media (max-width: 991px) {
+   .container {
+      max-width: 720px;
+      }
+   }
+/* Small: 576px - 767px */
+@media (max-width: 767px) {
+   .container {
+      max-width: 540px;
+      }
+   }
+/* Extra small: 0px (320px) - 575px */
+@media (max-width: 575px) {
+   .container {
+      padding: 0 15px;
+      }
+   }
 
 
 
 @media screen and (max-width: 991px) {
-	.hamburger {
-		display: block;
-	}
+.hamburger {
+   display: block;
+}
 
-   .header__nav {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      border-radius: 5px;
-      width: 181px;
-      height: 252px;
-      right: 0;
-      top: 55px;
-      padding: 55px 5px 20px 35px;
-   }
+.header__nav {
+   display: none;
+   position: absolute;
+   background-color: #fff;
+   border-radius: 5px;
+   width: 181px;
+   height: 252px;
+   right: 0;
+   top: 55px;
+   padding: 55px 5px 20px 35px;
+}
