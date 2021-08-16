@@ -47,10 +47,6 @@ a:focus, a:active {
    outline: none;
 }
 
-/* nav, footer, header {
-   display: block;
-} */
-
 input, button {
    font-family:inherit;
    outline: none;
@@ -154,14 +150,19 @@ img {
 }
 
 .logo {
-   background: url('../img/logo.svg');
+   background: url('../img/logo.svg') no-repeat;
    height: 25px;
+<<<<<<< HEAD
    min-width: 139px;
+=======
+   max-width: 139px;
+   width: 100%;
+>>>>>>> 995f064ed87a34dcb4941bd405b5823af25208e6
    display: block;
 }
 
 .header__nav {
-   padding: 0 206px 0 146px;
+   margin: 0 170px 0 146px;
 }
 
 .nav__list {
@@ -183,20 +184,16 @@ img {
    white-space: nowrap;
 }
 
-.header__tel::before {
-   content: '';
-   position: absolute;
-   display: block;
-   background: url('../img/phone.svg');
+.btn-modal {
+   background: url('../img/phone.svg') no-repeat;
    width: 27px;
    height: 27px;
-   left: -35px;
    transition: all 0.5s ease;
+   margin-right: 9px;
 }
 
-.header__tel:hover::before {
-   content: '';
-   background: url('../img/phone-hover.svg');
+.btn-modal:hover {
+   background: url('../img/phone-hover.svg') no-repeat;
 }
 
 .header__bag {
@@ -392,8 +389,7 @@ img {
 
 .collection__btn {
    margin: 65px auto 0;
-   max-width: 243px;
-   width: 100%;
+   width: min(100%, 243px);
 }
 
 .collection a {
@@ -413,8 +409,7 @@ img {
 }
 
 .card-advantages {
-   max-width: 350px;
-   width: 100%;
+   width: min(100%, 350px);
 }
 
 .card-advantages__icon {
@@ -428,8 +423,7 @@ img {
 }
 
 .card-advantages__text {
-   max-width: 302px;
-   width: 100%;
+   width: min(100%, 302px);
 }
 
 /* !team */
@@ -449,8 +443,7 @@ img {
 
 .team__slider {
    position: relative;
-   max-width: 729px;
-   width: 100%;
+   width: min(100%, 729px);
 }
 
 .team__slides {
@@ -503,8 +496,7 @@ img {
 }
 
 .team__content {
-   max-width: 255px;
-   width: 100%;
+   width: min(100%, 225px);
 }
 
 .content-box__title {
@@ -535,8 +527,7 @@ img {
 }
 
 .footer__info {
-   max-width: 204px;
-   width: 100%;
+   width: min(100%, 204px);
 }
 
 .footer__logo {
@@ -566,8 +557,7 @@ img {
 }
 
 .footer__contact {
-   max-width: 158px;
-   width: 100%;
+   width: min(100%, 158px);
    display: flex;
    flex-direction: column;
    align-items: flex-end;
@@ -584,9 +574,7 @@ img {
 
 .footer__socials {
    display: flex;
-   max-width: 90px;
-   width: 100%;
-   height: auto;
+   width: min(100%, 90px);
    justify-content: space-between;
    align-items: center;
    margin-bottom: 30px;
@@ -696,9 +684,6 @@ img {
    display: none;
 }
 
-.success-window__title {
-}
-
 .success-window__btn {
    margin: 35px auto 0;
    width: min(100%, 168px);
@@ -708,6 +693,7 @@ img {
 
 /*  Responsive  */
 /* Extra Large: ≥1200px */
+<<<<<<< HEAD
 @media (max-width: 1200px) {
    .container {
       max-width: 1140px;
@@ -719,22 +705,66 @@ img {
       max-width: 960px;
       }
    }
+=======
+/* @media (max-width: 1200px) {
+   .container {
+      max-width: 1110px;
+      } */
+/* } */
+
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+   .container {
+      max-width: 970px;
+      }
+}
+
+>>>>>>> 995f064ed87a34dcb4941bd405b5823af25208e6
 /* Medium: 768px - 991px */
 @media (max-width: 991px) {
    .container {
       max-width: 720px;
+<<<<<<< HEAD
       }
    }
+=======
+   }
+   
+   .hamburger {
+      display: block;
+   }
+   
+   .header__nav {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 181px;
+      height: 252px;
+      right: 0;
+      top: 55px;
+      padding: 55px 5px 20px 35px;
+   }
+}
+
+>>>>>>> 995f064ed87a34dcb4941bd405b5823af25208e6
 /* Small: 576px - 767px */
 @media (max-width: 767px) {
    .container {
       max-width: 540px;
+<<<<<<< HEAD
       }
    }
+=======
+   }
+}
+
+>>>>>>> 995f064ed87a34dcb4941bd405b5823af25208e6
 /* Extra small: 0px (320px) - 575px */
 @media (max-width: 575px) {
    .container {
       padding: 0 15px;
+<<<<<<< HEAD
       }
    }
 
@@ -755,4 +785,7 @@ img {
    right: 0;
    top: 55px;
    padding: 55px 5px 20px 35px;
+=======
+   }
+>>>>>>> 995f064ed87a34dcb4941bd405b5823af25208e6
 }

@@ -155,8 +155,6 @@ for(let modalWindow of modalWrap.children) {
 
 
 // Validate
-
-
 $('[data-submit]').on('click', function(e) {
    e.preventDefault();
    $(this).parent('form').submit();
@@ -224,9 +222,6 @@ $('form').validate({
                   setTimeout(function() {
                      $('#message').fadeIn();
                      }, 1500);
-                  setTimeout(function() {
-                     $('.wrapper-modal, .success-window').fadeIn ();
-                     }, 1700);
                });
             break;
          }
