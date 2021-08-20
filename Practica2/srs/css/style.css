@@ -1,0 +1,172 @@
+* {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+body {
+   font: 400 17px/1.2em 'Roboto', sans-serif;
+   color: #fff;
+   text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   text-transform: uppercase;
+   font-size: inherit;
+   margin: 0;
+}
+
+p {
+   margin: 0;
+}
+
+ul li {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;		
+   transition: all 0.5s ease;
+}
+a:hover {
+   text-decoration: none;
+   color: inherit;
+}
+
+img {
+   max-width: 100%;
+   object-fit: cover;
+}
+
+:focus, :active {
+   outline: none;
+}
+a:focus, a:active {
+   outline: none;
+}
+
+input, button, textarea {
+   font-family: inherit;
+}
+
+button, button:hover, button:focus {
+   outline: none;
+   border: none;
+   background-color: transparent; 
+}
+
+.btn {
+   border-radius: 4px;
+   display: block;
+   text-align: center;
+   text-transform: uppercase;
+   background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%);
+   box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12);
+   transition: all 0.5s ease;
+}
+.btn:hover {
+   background: linear-gradient(0deg, #105d6d 0%, #339cb1 100%);
+}
+.btn:active {
+   background: linear-gradient(0deg, #072a31 0%, #226775 100%);
+   box-shadow: none
+}
+
+.container {
+   max-width: 1140px;
+   margin: 0 auto;
+   padding: 0;
+}
+
+/* Header */
+.header {
+   position: relative;
+}
+.header-nav {
+   background: #212121;
+}
+
+.header-nav__items {
+   display: flex;
+   justify-content: space-between;
+   padding: 9px 70px 10px;
+   margin-bottom: 0;
+}
+
+.header-nav__item:not(:last-child) {
+   border-right: 2px dashed #000000;
+   padding: 3px 32px 3px 0;
+
+}
+
+.header-nav__link {
+   font-weight: 300;
+   font-size: 15px;
+}
+
+.subnav {
+   background: rgba(0, 0, 0, 0.6);
+   padding: 17px 0 15px 0;
+   position: absolute;
+   width: 100%;
+}
+
+.logo__img {
+   display: block;
+}
+
+.logo-desc {
+   margin-top: 4px;
+   font-weight: 200;
+   font-size: 13px;
+   text-align: left;
+}
+
+.text-phone {
+   font-weight: 300;
+   font-size: 12px;
+   text-align: right;
+}
+
+.header-phone {
+   margin-top: 4px;
+   font-size: 22px;
+   text-align: right;
+   display: block;
+   
+}
+
+.header-btn {
+   font-size: 14px;
+   min-width: 172px;
+   width: 100%;
+   padding: 15px 21px 15px 22px;
+}
+
+.offer {
+   background: url('../img/bg/uber_bg.jpg') no-repeat center center / cover;
+   font-size: 18px;
+   line-height: 1.3;
+   padding: 145px 0 186px;
+}
+
+.offer__title {
+   font-weight: 900;
+   font-size: 60px;
+}
+.offer__subtitle {
+   font-weight: 700;
+   font-size: 36px;
+   margin: 5px 0 9px;
+}
+.offer__text:not(:first-child) {
+   margin-top: 19px;
+}
+
+.offer__btn {
+   margin: 115px auto 0;
+   font-size: 18px;
+   max-width: 259px;
+   padding: 21px 39px;
+}
