@@ -85,6 +85,8 @@ button, button:hover, button:focus {
 }
 .header-nav {
    background: #212121;
+   position: sticky; 
+   top: 0;
 }
 
 .header-nav__items {
@@ -169,4 +171,69 @@ button, button:hover, button:focus {
    font-size: 18px;
    max-width: 259px;
    padding: 21px 39px;
+}
+
+/* Reasons */
+.reasons {
+   padding: 18px 0 64px;
+}
+
+.reason-label {
+   max-width: 115px;
+}
+
+.label {
+   font-size: 11px;
+   text-transform: uppercase;
+   padding: 2px 1px 1px 2px;
+   background: #000;
+   display: block;
+}
+
+.reason-title {
+   margin: 32px 0 16px;
+}
+
+.title {
+   font-weight: 700;
+   font-size: 38px;
+   text-transform: uppercase;
+   color: #222222;
+}
+
+.reasons-wrap {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.reasons-wrap__round {
+   width: 116px;
+   height: 116px;
+   background: #1EACC7;
+   border-radius: 100%;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   margin-right: 25px;
+}
+.reasons-wrap__icon {
+
+}
+
+.reasons-wrap__content {
+   text-align: left;
+   max-width: 371px;
+   width: 100%;
+}
+.reasons-wrap__title {
+   font-size: 17px;
+   color: #1EACC7;
+   text-transform: none;
+}
+.reasons-wrap__txt {
+   color: #202020;
+   font-size: 15px;
+   line-height: 1.4;
+   margin-top: 5px;
 }
