@@ -406,6 +406,56 @@ button {
    }
 }
 
-.conditios-lead {
+.world {
+   padding: 48px 0;
+   background: url('../img/bg/world_bg.jpg') no-repeat center / cover;
+   &-label {
+      background: #fff;
+      color: #000;
+      max-width: 76px;
+   }
+   &-title {
+      color: #fff;
+      margin-top: 27px;
+   }
+   &-subtitle {
+      color: #fff;
+      margin-top: 2px;
+   }
+   &-link {
+      font-size: 15px;
+      color: #1FBAD6;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      position: relative;
+      margin-top: 481px;
+      display: inline-block;
+      &:hover {
+         color: #116979;
+         &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: #1FBAD6;
+            position: absolute;
+            bottom:-2px;
+            right: 0;
+         } 
+      }
+   }
 }
+
+.footer {
+   padding: 11px 0 37px;
+}
+
+.decor-line {
+   height: 7px;
+   width: 301px;
+   margin: 0 auto;
+   background: #1FBAD6;
+   display: block;
+}
+
 
