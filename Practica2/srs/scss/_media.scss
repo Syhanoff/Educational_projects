@@ -1,0 +1,21 @@
+@media (max-width: 1199px) {
+   .header {
+      &-phone {
+      font-size: 20px;
+      }
+   }
+   .offer {
+      &__title {
+      font-size: 50px;
+      }
+   }
+   .reasons-wrap {
+      align-items: flex-start;
+      &__content {
+         max-width: 300px;
+      }
+   }
+   .mobile-content {
+      max-width: 300px;
+   }
+}
