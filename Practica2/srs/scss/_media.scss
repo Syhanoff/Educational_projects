@@ -1,8 +1,6 @@
 @media (max-width: 1199px) {
-   .header {
-      &-phone {
-      font-size: 20px;
-      }
+   .container {
+      max-width: 960px;
    }
    .offer {
       &__title {
@@ -17,5 +15,73 @@
    }
    .mobile-content {
       max-width: 300px;
+   }
+   .footer {
+      &-logo {
+         max-width: 240px;
+      }
+   }
+   .main-menu {
+      &_item {
+         font-size: 14px;
+         &:not(:last-child) {
+            margin-right: 24px;
+         }
+      }
+   }
+}
+
+@media (max-width: 991px) {
+   .container {
+      max-width: 720px;
+   }
+
+   .header-nav {
+      &__link {
+         font-size: 12px;
+      }
+      &__items {
+         padding: 9px 50px 10px;
+      }
+   }   
+   .offer {
+      &__subtitle {
+         font-size: 28px;
+      } 
+      &__title {
+         font-size: 40px;
+      }
+   }
+   .reasons-wrap {
+      flex-direction: column;
+      align-items: center;
+      &__content {
+         max-width: 300px;
+         margin-top: 20px;
+      }
+   }
+   .title {
+      font-size: 32px;
+   }
+   .mobile-content {
+      max-width: 230px;
+      &__subtitle {
+         font-size: 18px;
+      }
+   }
+   .footer {
+      &-logo {
+         max-width: 200px;
+         right: 21px;
+         top: 110px;
+      }
+      &-social {
+         right: 23px;
+         top: 100px;
+         &__link {
+            width: 30px;
+            height: 30px;
+         }
+      }
    }
 }
