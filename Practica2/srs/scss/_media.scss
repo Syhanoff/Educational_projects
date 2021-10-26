@@ -91,20 +91,58 @@
 			max-width: 540px;
 	}
    .header-nav {
+      height: 44px;
       &__items {
          position: fixed;
          flex-direction: column;
          justify-content: center;
          align-items: center;
          top: 0;
-         left: 0;
+         left: -100%;
          width: 50%;
          height: 100vh;
          padding: 20px 15px;
          background: rgba(0, 0, 0, .8);
+         transition: 0.6 all;
+         &-active {
+            right: 0;
+         }
       }
       &__link {
          font-size: 18px;
+      }
+      &__item {
+         margin: 15px 0;
+      }
+   }
+   .hamburger {
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 26px;
+      transition: 0.6 all;
+      span {
+         display: block;
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+         margin-bottom: 2px;
+         }  
+      &_active {
+         span {
+            margin-bottom: -2px;
+            &:nth-child(1) {
+               transform: rotate(-45deg);
+            }
+            &:nth-child(2) {
+               display: none;
+            }
+            &:nth-child(3) {
+               transform: rotate(45deg);
+            }
+         }
       }
    }
 }
