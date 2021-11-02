@@ -103,9 +103,9 @@
          height: 100vh;
          padding: 20px 15px;
          background: rgba(0, 0, 0, .8);
-         transition: 0.6 all;
-         &-active {
-            right: 0;
+         transition: 0.8s all;
+         &_active {
+            left: 0;
          }
       }
       &__link {
@@ -122,25 +122,26 @@
       top: 50%;
       transform: translateY(-50%);
       width: 26px;
-      transition: 0.6 all;
+      height: 12px;
       span {
          display: block;
          width: 100%;
          height: 2px;
          background-color: #fff;
          margin-bottom: 2px;
+         transition: 0.8s all;
          }  
       &_active {
          span {
             margin-bottom: -2px;
             &:nth-child(1) {
-               transform: rotate(-45deg);
+               transform: translateY(3px) rotate(-45deg);
             }
             &:nth-child(2) {
                display: none;
             }
             &:nth-child(3) {
-               transform: rotate(45deg);
+               transform: translateY(3px) rotate(45deg);
             }
          }
       }
