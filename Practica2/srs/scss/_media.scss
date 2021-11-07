@@ -146,4 +146,132 @@
          }
       }
    }
+   .text-phone, .logo-desc {
+      display: none;
+   }
+   .offer {
+      padding: 165px 0 100px;
+      &__subtitle {
+         font-size: 26px;
+      }
+   }
+   .title {
+      font-size: 28px;
+   }
+   .reasons-wrap {
+      &__content {
+         max-width: 450px;
+      }
+   }
+   .mobile-content {
+      max-width: 100%;
+      margin-bottom: 19px;
+   }
+   .mobile-content-6 {
+      margin-bottom: 0;
+   }
+   .select {
+      padding-bottom: 50px;
+      &-slogan {
+         color: #000;
+      }
+   }
+   .world-link {
+      margin-top: 350px;
+   }
+}
+
+@media (max-width: 575px) {
+	.container {
+		padding: 0 15px;
+	}
+   .header {
+      &-phone_sm {
+      display: block;
+      font-size: 12px;
+      text-align: center;
+      }
+      &-btn {
+         font-size: 10px;
+         min-width: 110px;
+         width: 100%;
+         padding: 5px 0 5px;
+      }
+      &-nav {
+         height: 32px;
+         &__items {
+            width: 80%;
+         }
+      }
+   }
+   .subnav {
+      padding: 10px 0 10px;
+   }
+   .offer {
+      padding: 102px 0 34px;
+      &__title {
+         font-size: 30px;
+      }
+      &__subtitle {
+         font-size: 20px;
+         margin-top: 14px;
+      }
+      &__text {
+         display: none;
+      }
+      &__btn {
+         margin: 73px auto 0;
+         font-size: 16px;
+         max-width: 189px;
+         padding: 17px 0 14px;
+      }
+   }
+   .title {
+      font-size: 16px;
+   }
+   .reasons {
+      padding: 20px 0 38px;
+      &-wrap {
+         margin-bottom: 23px;
+         &__content {
+         width: 100%;
+         }
+      }
+      &-title {
+         font-size: 16px;
+      }
+   }
+   .mobile {
+      padding: 25px 0 42px;
+      &-subtitle {
+         margin-top: 9px;
+      }
+      &-title {
+         margin-top: 14px;
+      }
+      &-content {
+         max-height: 254px;
+         margin-bottom: 30px;
+         &:first-child {
+            margin-bottom: 30px;
+         }
+      }
+   }
+   .select {
+      background: #070716;
+      padding: 27px 0 31px;
+      &-title {
+         display: none;
+      }
+      &-subtitle {
+         display: none;
+      }
+      &-slogan {
+         color: #fff;
+         margin-top: 23px;
+      }
+   }
+   .conditions {
+      padding: 22px 0 30px;
+   }
 }
