@@ -110,11 +110,23 @@
       }
       &__link {
          font-size: 18px;
+         display: block;
       }
       &__item {
          margin: 15px 0;
+         width: 100%;
       }
    }
+
+   .btn {
+      &:hover {
+         background: linear-gradient(0deg, #1eacc7 0%, #4ce2ff 100%);
+      }
+      &:active {
+         background: linear-gradient(0deg, #1eacc7 0%, #4ce2ff 100%);
+      }
+   }
+
    .hamburger {
       display: block;
       position: absolute;
@@ -317,12 +329,15 @@
    .footer {
       padding: 24px 0 30px;
       &-logo {
-         max-width: 260px;
-         right: 25px;
-         top: 256px;
+         min-width: 260px;
+         left: 50%;
+         transform: translateX(-50%);
+         top: auto;
+         bottom: 30px;
       }
       &-social {
-         top: 205px;
+         top: auto;
+         bottom: 72px;
          justify-content: center;
       }
    }
@@ -331,7 +346,7 @@
       width: 255px;
    }
    .languege-link {
-      margin-bottom: 94px;
+      margin: 10px 0 94px;
    }
    .main-menu {
       margin-top: 21px;
@@ -340,4 +355,13 @@
       margin-right: 0;
       }
    }
+   .second-menu {
+      justify-content: space-between;
+      &_item {
+         &:not(:last-child) {
+            margin-right: 0;
+         }
+      }
+   }
+      
 }
