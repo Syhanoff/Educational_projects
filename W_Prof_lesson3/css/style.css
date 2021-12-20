@@ -1,0 +1,105 @@
+body {
+	font-family: arial, sans-serif;
+}
+
+div, p, ul, li {
+	box-sizing: border-box;
+}
+
+h1 {
+	color: red;
+}
+
+.subtitle {
+	color: white;
+	background: blue;
+	padding: 5px 0px;
+	margin: 0px 0px 150px;
+	width: 110px;
+}
+
+.span1 {
+	color: red;
+}
+
+h2 {
+	color: white;
+	background: green;
+	padding: 5px;
+}
+
+h2.form_title {
+	padding: 40px;
+}
+
+p.form_text {
+	margin-left: 120px;
+}
+
+input, button {
+	font-size: 15px;
+}
+
+div.list {
+	margin-left: 40px;
+	font-size: 35px;
+}
+
+li.list1 {
+	border: 1px solid black;
+}
+
+li.list2 {
+	border: 3px solid black;
+}
+
+li.list3 {
+	border: 1px solid black;
+}
+
+
+
+/*h2.first {
+	color: blue;
+	font-size: 100px;
+	border: 6px solid green;
+	width: 800px;
+	height: 800px;
+}
+
+.block {
+	font-size: 20px;
+	width: 300px;
+	height: 300px;
+	background: #fff0de;
+	padding: 10px 20px 40px 30px;
+	border: 5px solid blue;
+	opacity: 1.0;
+}
+
+.block:hover {
+	opacity: 0.5;
+}
+
+p {
+	font-weight: bold;
+	line-height: 1.7em;
+	letter-spacing: 0.15em;
+}
+
+.new a {
+	color: green;
+}
+
+#block {
+	background: yellow;
+}
+
+.list {
+	color: pink;
+	line-height: 80px;
+}
+
+.link:hover {
+	font-size: 25px;
+}*/

@@ -1,0 +1,225 @@
+body {
+	color: black;
+	font-family: 'Tahoma', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+section {
+	padding: 100px 0;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto
+}
+
+.header {
+	padding: 100px 0;
+	background: #d4d4d4;
+}
+
+.title {
+	font-size: 50px;
+	text-align: center;
+}
+
+.boxes {
+	display: flex;
+	justify-content: space-between;
+}
+
+.boxes__item {
+	background: blue;
+	color: #fff;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 200px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.block, .image {
+	width: 46%;
+}
+
+.block {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center
+}
+
+.image img {
+	max-width: 100%;
+}
+
+/*  Responsive  */
+
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+/* Medium: 768px - 991px */
+@media (max-width: 991px) {
+	.container {
+		max-width: 720px;
+	}
+	.boxes {
+		flex-wrap: wrap;
+	}
+	.boxes__item {
+		margin-bottom: 20px;
+	}
+	.wrapper {
+		flex-direction: column;
+	}
+	.block, .image {
+		width: auto;
+	}
+	.block {
+		margin-bottom: 30px;
+	}
+	.boxes__item:last-of-type {
+		display: none;
+	}
+}
+
+/* Small: 576px - 767px */
+@media (max-width: 767px) {
+	.container {
+		max-width: 540px;
+	}
+	.boxes {
+		justify-content: center;
+		flex-direction: column;
+		align-content: center
+	}
+}
+
+/* Extra small: 0px (320px) - 575px */
+@media (max-width: 575px) {
+	.container {
+		padding: 0 15px;
+	}
+	.title {
+		font-size: 40px;
+	}
+}
+
+
+/* 
+
+👍 Алгоритм работы по созданию отзывчивости:
+
+	1. Прописать <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> в секцию <head>
+
+	2. Вставить шаблон медиа-запросов в конец CSS-файла
+
+	3. Проверять работоспособность и отсутствие горизонтального скролла на нижней границе каждого диапазона
+
+	4. Перестраиваем контент, скрываем лишнее, заменяем на подходящее 
+
+	5. Не забываем нажимать CTRL+0 при переходе между брейкпоинтами
+
+*/
+
+
+
+/* Large: 992px - 1199px */
+@media (max-width: 1199px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+/* Medium: 768px - 991px */
+@media (max-width: 991px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
+/* Small: 576px - 767px */
+@media (max-width: 767px) {
+	.container {
+		max-width: 540px;
+	}
+}
+
+/* Extra small: 0px (320px) - 575px */
+@media (max-width: 575px) {
+	.container {
+		padding: 0 15px;
+	}
+}
+
+
+
+
+/*  ➗ Формула написания медиа-запросов  */
+
+@media условие {
+
+}
+
+/*  📱 Типы устройств: all, screen, print  */
+
+@media screen {
+
+}
+
+/*  ➕ Операторы: and, ",", not  */
+
+@media screen and (max-width: 1000px) {
+	.element {
+		background: red;
+	}
+}
+
+@media screen, (max-width: 800px) {
+	.element {
+		background: green;
+	}
+}
+
+@media screen not (max-width: 500px) {
+	.element {
+		background: blue;
+	}
+}
+
+/*  🔶 Медиа-функции:
+
+	- width   min-width   max-width
+	- height  min-height  max-height
+	- orientation  (portrait/landscape)
+	- resolution  min-resolution  max-resolution  (dpi, dpcm, dppx)  /  1dppx = 96dpi
+
+*/
+
+@media (min-width: 400px) {
+	.element {
+		background: yellow
+	}
+}
+
+@media (orientation: landscape) and (min-resolution: 2dppx) {
+	.element {
+		background: url('../img/image@2px.jpg')
+	}
+}

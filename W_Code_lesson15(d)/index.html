@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Javascript</title>
+	<!-- CSS -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<!-- header -->
+	<header class="header" id="header">
+		<div class="container">
+			<a href="#" class="logo"></a>
+			<img src="img/logo.png" alt="">
+			<h1 class="header-title">
+				Тренировка Javascript
+			</h1>
+		</div>
+	</header>
+<!-- tab -->
+	<section class="tab-section" id="tab-section">
+		<div class="container">
+			<h2 class="section-title">
+				1. Табы
+			</h2>
+			<div class="tabs">
+				<div class="tabs-btns" id="tabs-btns">
+					<button type="button" class="tab-btn" data-btn="1">Жираф</button>
+					<button type="button" class="tab-btn" data-btn="2">Олень</button>
+					<button type="button" class="tab-btn active" data-btn="3">Козочка</button>
+					<button type="button" class="tab-btn" data-btn="4">Бурундук</button>
+
+				</div>
+				<div class="tabs-contents" id="tabs-contents">
+					<div class="tab-content" data-content="1">
+						<h3 class="tab-content__title">
+							Жираф
+						</h3>
+					</div>
+					<div class="tab-content" data-content="2">
+						<h3 class="tab-content__title">
+							Олень
+						</h3>
+					</div>
+					<div class="tab-content active" data-content="3">
+						<h3 class="tab-content__title">
+							Козочка
+						</h3>
+						<p class="tab-content__text">
+							Домашняя коза (лат. Capra hircus) — домашнее животное, вид парнокопытных из рода горные козлы (Capra) семейства полорогих
+						</p>
+						<p class="tab-content__text">
+							Коза — одно из первых прирученных животных. Одомашнена на Ближнем Востоке, приблизительно 9 тыс. лет назад. Предком домашней козы был дикий безоаровый козёл (Capra hircus aegagrus), до сегодняшнего дня встречающийся от греческих островов в Эгейском море через Малую Азию, Армянское нагорье и Переднюю Азию до Средней Азии.
+						</p>
+					</div>
+					<div class="tab-content" data-content="4">
+						<h3 class="tab-content__title">
+							Бурундук
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- modal -->
+	<section class="modal-section" id="modal-section">
+		<div class="container">
+			<h2 class="section-title">
+				2. Модальное окно
+			</h2>
+				<button type="button" class="btn-open" id="btn-open">
+					Вызвать дождь
+				</button>		
+		</div>
+	</section>
+<!-- slides -->
+	<section class="slide-section" id="slide-section">
+		<div class="container">
+			<h2 class="section-title">
+				3. Слайдер
+			</h2>
+				<div class="slider-wrapper">
+            		<button type="button" class="btn-slide btn-slide_prev" id="btn-prev"></button>
+            		<div class="slides active">
+                		<p class="slide-text">
+							Это слайд 1 с текстом
+						</p>
+           			</div>
+          			<div class="slides">
+                		<p class="slide-text">
+							Это слайд 2 с текстом
+						</p>
+            		</div>
+            		<div class="slides">
+                		<p class="slide-text">
+							Это слайд 3 с текстом
+						</p>
+            		</div>
+            		<button type="button" class="btn-slide btn-slide_next" id="btn-next"></button>
+        			<div class="dots-wrapper">
+        				<button type="button" class="dot active"></button>
+        				<button type="button" class="dot"></button>
+        				<button type="button" class="dot"></button>
+    				</div>
+				</div>
+		</div>
+	</section>
+<!-- footer -->
+	<footer class="footer" id="footer">
+		<div class="container">
+			<h2 class="section-title">
+				Ну, что поделать, если мне все это удалось! :)
+			</h2>
+		</div>
+	</footer>
+<!-- modal window -->
+	<div class="wrapper-modal" id="wrapper-modal">
+		<div class="modal-window" id="modal-window">
+			<h4 class="modal-window__title">
+				Немного о дожде
+			</h4>
+			<p class="modal-window__text">
+				До́ждь — атмосферные осадки, выпадающие из облаков в виде капель жидкости со средним диаметром от 0,5 до 6—7 мм[1].
+			</p>
+			<p class="modal-window__text">
+				Осенние дожди. Южная Эстония
+			</p>
+			<p class="modal-window__text">
+				Летний дождь в Санкт-Петербурге
+	 			Жидкие осадки с меньшим диаметром капель называются моросью[2]. Капли с диаметром больше 6—7 мм разбиваются в процессе падения из облаков на меньшие капли, поэтому даже при сильнейшем ливне диаметр капель не превышает 6—7 мм. Интенсивность дождя обычно составляет от 0,25 мм/ч (моросящий дождь) до 100 мм/ч (ливень)[1]. В Европе самый сильный ливень с интенсивностью 15,5 мм/мин был зафиксирован в 1920 году в Германии[2].
+			</p>
+			<button type="button" class="btn-close" id="btn-close"></button>
+		</div>
+	</div>
+ 	<script src="js/main.js"></script>
+</body>
+</html>

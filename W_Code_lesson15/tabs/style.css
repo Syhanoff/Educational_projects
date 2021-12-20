@@ -1,0 +1,48 @@
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.tabs-block-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+#tabs {
+    display: flex;
+}
+
+.tab-btn {
+    display: flex;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-btn.active {
+    background-color: blue;
+    color: #fff;
+}
+
+#contents {
+    height: 150px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #000;
+
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
