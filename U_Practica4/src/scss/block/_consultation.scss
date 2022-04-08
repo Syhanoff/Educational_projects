@@ -1,6 +1,6 @@
 .consultation {
   padding: 100px 0 108px;
-  background: url('../../img/bg2.jpg') no-repeat center / cover;
+  background: url('../img/bg2.jpg') no-repeat center / cover;
   &__title {
     @include adaptiv-font(36, 26);
     color: $primary-color;
