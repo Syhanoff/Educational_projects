@@ -1,149 +1,125 @@
-/* Значение из текстовых инпутов:*/
-const anInitialFee = document.getElementById('an-initial-fee'), // первоначальный взнос
-      creditTerm = document.getElementById('credit-term'); // срок кредита
-
-/* Значение из range инпутов:*/
-const anInitialFeeRange = document.getElementById('an-initial-fee-range'), // range для первоначального взноса
-      anInitialTermRange = document.getElementById('credit-term-range'); // range для срока кредита
-
-/* Итоговые выводимы значения:*/
-const totalAmountOfCredit = document.getElementById('amount-of-credit'), //сумма кредита
-      totalMonthlyPayment = document.getElementById('monthly-payment'); //Ежемесячный платеж
-
-const inputsRange = document.querySelectorAll('.input-range'); // все range
-
-/* Мапинг range + input[text]*/
-const assignValue = () => {
-    anInitialFee.value = anInitialFeeRange.value;
-    creditTerm.value = anInitialTermRange.value;
-}
-
-
-for(let input of inputsRange) {
-    input.addEventListener('input', () => {
-        assignValue();
-        calculation(anInitialFee.value, creditTerm.value)
-    })
-}
-
-assignValue();
-
-
-/* Модальное окно*/
-
-const btnOpenConfig = document.getElementById('open-configure'),
+const anInitialFee = document.getElementById('an-initial-fee'),
+      anInitialFeeRange = document.getElementById('an-initial-fee-range'),
+      creditTerm = document.getElementById('credit-term'),
+      creditTermRange = document.getElementById('credit-term-range'),
+      amountOfCredit = document.getElementById('amount-of-credit'),
+      monthlyPayment = document.getElementById('monthly-payment'),
+      engine = document.getElementById('engine'),
+      complectation = document.getElementById('complectation'),
+      inputsRange = document.querySelectorAll('.input-range'),
+      openConfigureButton = document.getElementById('open-configure'),
+      overlay = document.getElementById('overlay'),
       wrapperModal = document.getElementById('wrapper-modal'),
-      overlay = document.getElementById('overlay');
+      saveConfiguration = document.getElementById('saveConfiguration'),
+      cancelConfiguration = document.getElementById('cancelConfiguration'),
+      cars = document.querySelectorAll('.car'),
+      dots = document.querySelectorAll('.dot'),
+      additionalAmount = document.getElementById('additionalAmount'),
+      priceOfAuto = document.querySelectorAll('.price-auto'),
+      totalPriceOfAuto = document.getElementById('total-price-of-auto'),
+      priceInformation = document.querySelector('.start-price');
 
-const saveConfiguration = document.getElementById('saveConfiguration'),
-      cancelConfiguration = document.getElementById('cancelConfiguration');
+const percent = 11.5,
+      initialPrice = 500000;
 
-
-btnOpenConfig.addEventListener('click', () => {
-    wrapperModal.classList.add('active');
-})
-
-const closeModal = () => {
-    wrapperModal.classList.remove('active');
-}
-
-overlay.addEventListener('click', closeModal);
-saveConfiguration.addEventListener('click', closeModal);
-cancelConfiguration.addEventListener('click', closeModal);
-
-/* Configuration settings*/
-
-const cars = document.querySelectorAll('.car'),
-      dots = document.querySelectorAll('.dot');
-
-const currentPrecent = 8.7;
-
-let totalPriceOfConfiguration = 0;
-const additionalAmount = document.getElementById('additionalAmount');
-additionalAmount.innerHTML = totalPriceOfConfiguration;
-
-const priceOfAuto = 700000;
-const priceOfAutoElement = document.getElementById('priceOfAuto');
-priceOfAutoElement.innerHTML = priceOfAuto;
+let addTotalPrice = 0;
 
 const pricesOfColors = {
-    blue : 0,
-    brown: 2000,
-    orange: 4000,
-    pink: 6000,
-    red: 8000
-}
-
+  blue: 0,
+  red: 5000,
+  pink: 6000,
+  orange: 7000,
+  brown: 8000
+};
 let currentPriceOfColor = pricesOfColors.blue;
 
-const activeColor = color => {
-    for(car of cars) {
-        car.classList.remove('active');
-    }
-    for(dot of dots) {
-        dot.classList.remove('active');
-    }
 
-    Array.from(cars).filter(item => {
-        return item.dataset.color === color
-    }).forEach(item => {
-        item.classList.add('active');
-    });
-
-    currentPriceOfColor = pricesOfColors[`${color}`];
-    checkTotalPriceOfConfiguration();
+function equateValues() {
+  anInitialFee.value = anInitialFeeRange.value;
+  creditTerm.value = creditTermRange.value;
+  calculation(anInitialFee.value, creditTerm.value);
 }
 
-for(dot of dots) {
+
+inputsRange.forEach(el => {
+  el.addEventListener('input', equateValues)
+})
+
+
+openConfigureButton.addEventListener('click', openConfigureModal);
+
+
+function openConfigureModal() {
+  wrapperModal.classList.add('active');
+  overlay.addEventListener('click', clouseConfigureModal);
+  cancelConfiguration.addEventListener('click', clouseConfigureModal);
+  saveConfiguration.addEventListener('click', clouseConfigureModal);
+  colorСhoice();
+  engine.addEventListener('change', finalPriceOfComplectation);
+  complectation.addEventListener('change', finalPriceOfComplectation);
+  saveConfiguration.addEventListener('click', finalPriceOfComplectation);
+}
+
+
+function clouseConfigureModal() {
+  wrapperModal.classList.remove('active');
+  overlay.removeEventListener('click', clouseConfigureModal);
+  cancelConfiguration.removeEventListener('click', clouseConfigureModal);
+  saveConfiguration.removeEventListener('click', clouseConfigureModal);
+}
+
+
+additionalAmount.innerText = addTotalPrice;
+priceOfAuto.forEach(el => {
+  el.innerText = initialPrice;
+})
+
+
+function colorСhoice() {
+  for(let dot of dots) {
     dot.addEventListener('click', e => {
-        e.target.classList.add('active');
+      cars.forEach(el => {
+        if (e.target.dataset.color === el.dataset.color) {
+          for(let car of cars) {
+            car.classList.remove('active');
+          }
+          for(let dot of dots) {
+            dot.classList.remove('active')
+          }
+          e.target.classList.add('active');
+          el.classList.add('active');
+          currentPriceOfColor = pricesOfColors[`${e.target.dataset.color}`];
+          finalPriceOfComplectation();
+        }
+      })
     })
+  }
 }
 
-const engine = document.getElementById('engine'),
-      complectation = document.getElementById('complectation');
 
-const checkTotalPriceOfConfiguration = () => {
-    totalPriceOfConfiguration = +(engine.value) + +(complectation.value) + currentPriceOfColor;
-    additionalAmount.innerHTML = totalPriceOfConfiguration;
-    calculation(anInitialFee.value, creditTerm.value);
-}
-
-engine.addEventListener('change', checkTotalPriceOfConfiguration);
-complectation.addEventListener('change', checkTotalPriceOfConfiguration);
-saveConfiguration.addEventListener('click', checkTotalPriceOfConfiguration);
+function finalPriceOfComplectation() {
+  addTotalPrice = +engine.value + +complectation.value + currentPriceOfColor;
+  additionalAmount.innerText = addTotalPrice;
+  calculation(anInitialFee.value, creditTerm.value);
+} 
 
 
-
-const calculation = (anInitialFee = 100000, creditTerm = 1) => {
-    /* 
-        Сумма кредита = Сумма кредита + ((((Стоимость автомобиля + допы) - первый взнос) * проценты) / 100 )
-    */
-
-    /* Расчет итогового кредита*/
-    const amountOfPrecents = (((priceOfAuto + totalPriceOfConfiguration) - anInitialFee) * currentPrecent) / 100;
-    const totalPriceOfCredit = (priceOfAuto + totalPriceOfConfiguration) - anInitialFee + amountOfPrecents;
-
-    /* Расчет месяцев*/
-    const numberOfMonth = 12 * creditTerm; // Количество месяцев
-    const monthlyPayment = totalPriceOfCredit / numberOfMonth //ежемесячный платеж
-
-    if(totalPriceOfCredit < 0) {
-        return false;
+function calculation(anInitialFee = 100000, creditTerm = 1) {
+  const amountPercents = (((initialPrice + addTotalPrice) - anInitialFee) * percent) / 100;
+  const totalPriceOfCredit = ((initialPrice + addTotalPrice) - anInitialFee) + amountPercents;
+  const numberOfMonth = 12 * creditTerm;
+  const monthlyPayments = totalPriceOfCredit / numberOfMonth;
+  if(totalPriceOfCredit < 0) {
+    return false;
+  } else {
+    amountOfCredit.innerText = Math.round(amountPercents);
+    monthlyPayment.innerText = Math.round(monthlyPayments);
+    if(addTotalPrice === 0) {
+      priceInformation.innerHTML = `Стоимость машины без допов: ${initialPrice} ₽`
     } else {
-        totalAmountOfCredit.innerHTML = Math.round(totalPriceOfCredit);
-        totalMonthlyPayment.innerHTML = Math.round(monthlyPayment);
+      priceInformation.innerHTML = `Стоимость машины с учетом выбранных допов: ${addTotalPrice + initialPrice} ₽`
     }
-
+  }
 }
 
 calculation();
-
-
-
-
-
-
-
-
-

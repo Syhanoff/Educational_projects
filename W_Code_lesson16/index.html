@@ -23,19 +23,19 @@
                     <img class="car" src="images/car-red.png" alt="" data-color="red">
                 </div>
                 <div class="color-config-wrapper-right color-dots">
-                    <div class="dot blue active" onclick="activeColor('blue')">
+                    <div class="dot blue active" data-color="blue">
                         <span class="content">Голубой</span>
                     </div>
-                    <div class="dot brown" onclick="activeColor('brown')">
+                    <div class="dot brown" data-color="brown">
                         <span class="content">Коричневый</span>
                     </div>
-                    <div class="dot orange" onclick="activeColor('orange')">
+                    <div class="dot orange" data-color="orange">
                         <span class="content">Оранжевый</span>
                     </div>
-                    <div class="dot pink" onclick="activeColor('pink')">
+                    <div class="dot pink" data-color="pink">
                         <span class="content">Розовый</span>
                     </div>
-                    <div class="dot red" onclick="activeColor('red')">
+                    <div class="dot red" data-color="red">
                         <span class="content">Красный</span>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                 <option value="15000">Средняя</option>
                 <option value="30000">Расширенная</option>
             </select>
-            <p class="">Стоимость машины без допов: <span id="priceOfAuto"></span> ₽</p>
+            <p class="">Стоимость машины без допов: <span class="price-auto"></span> ₽</p>
             <p class="">Дополнительная сумма: <span id="additionalAmount"></span> ₽</p>
             <div class="buttons-wrapper">
                 <button id="saveConfiguration">СОХРАНИТЬ</button>
@@ -64,7 +64,8 @@
         <div class="calculator-content">
             <div class="calculator-content-title">
                 <h1>Рассчитать автокредит</h1>
-            </div>
+              </div>
+              <h2 class="start-price"></h2>
             <div class="calculator-content-body">
                 <div class="calculator-content-body-left">
                     <div class="calculator-content-body-left-inputs">
@@ -74,21 +75,21 @@
                             </button>
                         </div>
                         <div class="input-wrapper">
-                            <div class="title">Первоначальный взнос</div>
+                            <div class="title">Минимальный первоначальный взнос</div>
                             <div class="input">
-                                <input type="number" id="an-initial-fee" value="0" class="input-text">
+                                <input type="number" id="an-initial-fee" value="10000" class="input-text">
                             </div>
                             <div class="input">
-                                <input type="range" min="100000" max="10000000" id="an-initial-fee-range" value="0" class="input-range">
+                                <input type="range" min="10000" max="500000" id="an-initial-fee-range" value="10000" class="input-range">
                             </div>
                         </div>
                         <div class="input-wrapper">
-                            <div class="title">Срок кредита</div>
+                            <div class="title">Минимальный срок кредита (лет)</div>
                             <div class="input">
-                                <input type="number" id="credit-term" value="0" class="input-text">
+                                <input type="number" id="credit-term" value="1" class="input-text">
                             </div>
                             <div class="input">
-                                <input type="range" min="1" max="20" id="credit-term-range" value="0" class="input-range">
+                                <input type="range" min="1" max="5" id="credit-term-range" value="1" class="input-range">
                             </div>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
                 <div class="calculator-content-body-right">
                     <div class="final-results-wrapper">
                         <div class="final-result-item">
-                            <div class="title">Сумма кредита</div>
+                            <div class="title">Сумма кредита (ставка 11,5%)</div>
                             <div class="value"><span id="amount-of-credit">0</span> ₽</div>
                         </div>
                         <div class="final-result-item">
