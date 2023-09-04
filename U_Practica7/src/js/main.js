@@ -90,4 +90,44 @@ function setTime(clockBox, end) {
 setTime('.timer', deadline);
 
 
+//Modal
+const buttonsOpenModal = document.querySelectorAll('[data-modal]'),
+      buttonCloseModal = document.querySelector('.modal__close'),
+      modal = document.querySelector('.modal');
+
+buttonsOpenModal.forEach(el => el.addEventListener('click', openModal));
+const modalInterval = setTimeout(openModal, 3000);
+
+
+function showModalByScroll() {
+  if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+    openModal();
+    window.removeEventListener('scroll', showModalByScroll);
+  }
+
+}
+
+window.addEventListener('scroll', showModalByScroll)
+
+
+document.documentElement.scrollTop 
+
+
+function openModal() {
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  modal.addEventListener('click', closeModal);
+  buttonCloseModal.addEventListener('click', closeModal);
+  document.addEventListener('keydown', closeModal);
+  clearInterval(modalInterval);
+}
+
+function closeModal(e) {
+  if (e.target === modal || e.target === buttonCloseModal || e.code === 'Escape') {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+
 })
