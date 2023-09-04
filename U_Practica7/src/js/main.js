@@ -137,7 +137,7 @@ window.addEventListener('DOMContentLoaded', () => {
       this.parent = document.querySelector(parentSelector);
       this.classes = classes;
     };
-    
+
     createNewCard() {
       const element = document.createElement('div');
       if (this.classes.length === 0) {
@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="menu__item-divider"></div>
           <div class="menu__item-price">
             <div class="menu__item-cost">Цена:</div>
-            <div class="menu__item-total"><span>${this.cost}</span> грн/день</div>
+            <div class="menu__item-total"><span>${this.cost}</span> руб/день</div>
           </div>
       `;
       this.parent.append(element);
