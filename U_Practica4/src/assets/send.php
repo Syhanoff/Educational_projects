@@ -24,13 +24,13 @@ try {
   $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
   $mail->Host       = 'smtp.yandex.ru';
-  $mail->Username   = 'Ssyhanoff@yandex.ru';
-  $mail->Password   = 'wbthkfxiwradgjyg';
+  $mail->Username   = '';
+  $mail->Password   = '';
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
-  $mail->setFrom('Ssyhanoff@yandex.ru', 'Pulse');
+  $mail->setFrom('@yandex.ru', 'Pulse');
 
-  $mail->addAddress('Ssyhann@yandex.ru', 'Me');
+  $mail->addAddress('@yandex.ru', 'Me');
 
   $mail->isHTML(true);
   $mail->Subject = $title;
