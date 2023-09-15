@@ -2,6 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
+
   //tabs
   const tabs = document.querySelectorAll('.tabheader__item'),
         tabsWrapper = document.querySelector('.tabheader__items'),
@@ -35,7 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // const deadline = '2023-09-03';
   const date = new Date();
   const deadline = date.setHours(48);
-
 
   function getRestTime(end) {
     const difference = end - new Date(),
@@ -90,54 +90,18 @@ window.addEventListener('DOMContentLoaded', () => {
   setTime('.timer', deadline);
 
 
-  //Modal
-  const buttonsOpenModal = document.querySelectorAll('[data-modal]'),
-        buttonCloseModal = document.querySelector('.modal__close'),
-        modal = document.querySelector('.modal');
-
-  buttonsOpenModal.forEach(el => el.addEventListener('click', openModal));
-  const modalInterval = setTimeout(openModal, 3000);
-
-  function showModalByScroll() {
-    if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-      openModal();
-      window.removeEventListener('scroll', showModalByScroll);
-    }
-  };
-
-  window.addEventListener('scroll', showModalByScroll);
-
-  document.documentElement.scrollTop;
-
-  function openModal() {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    modal.addEventListener('click', closeModal);
-    buttonCloseModal.addEventListener('click', closeModal);
-    document.addEventListener('keydown', closeModal);
-    clearInterval(modalInterval);
-  };
-
-  function closeModal(e) {
-    if (e.target === modal || e.target === buttonCloseModal || e.code === 'Escape') {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  };
-
-
   //Card
   class Card{
-    constructor(alt, scr, title, descr, cost, parentSelector, ...classes) {
-      this.alt = alt;
+    constructor(scr, alt, title, descr, cost, parentSelector, ...classes) {
       this.scr = scr;
+      this.alt = alt;
       this.title = title;
       this.descr = descr;
       this.cost = cost;
       this.parent = document.querySelector(parentSelector);
       this.classes = classes;
     };
-
+    
     createNewCard() {
       const element = document.createElement('div');
       if (this.classes.length === 0) {
@@ -161,35 +125,151 @@ window.addEventListener('DOMContentLoaded', () => {
     };
   };
 
-  new Card(
-    "vegy", 
-    "img/tabs/vegy.jpg", 
-    'Меню "Фитнес"',
-    'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
-    229,
-    '.menu .container',
-    'menu__item'
-    ).createNewCard();
 
-  new Card(
-    "elite", 
-    "img/tabs/elite.jpg", 
-    'Меню "Премиум"',
-    'В меню "Премиум" мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
-    550,
-    '.menu .container',
-    'menu__item'
-    ).createNewCard();
+  //Вариант генерации карточек через асинхронную функцию с методом fetch
+  // const getCardContent = async (url) => {
+  //   const result = await fetch(url);
+  //   if (!result.ok) {
+  //     throw new Error (`Нвозможно получить адрес: ${url}, status ответа сервера: ${result.status}`);
+  //   }
+  //   return await result.json();
+  // }
 
-  new Card(
-    "post", 
-    "img/tabs/post.jpg", 
-    'Меню "Постное"',
-    'Меню "Постное" - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
-    430,
-    '.menu .container',
-    'menu__item'
-    ).createNewCard();
+  // getCardContent('http://localhost:3000/menu')
+  // .then(data => {
+  //   data.forEach(({img, altimg, title, descr, price}) => {
+  //     new Card(img, altimg, title, descr, price, '.menu .container').createNewCard();
+  //   })
+  // })
 
 
+  //Вариант генерации карточек с использованием библиотеки Axios
+  axios.get('http://localhost:3000/menu')
+  .then(response => {
+    response.data.forEach(({img, altimg, title, descr, price}) => {
+      new Card(img, altimg, title, descr, price, '.menu .container').createNewCard();
+    });
+  });
+
+
+  //Modal
+  const buttonsOpenModal = document.querySelectorAll('[data-modal]'),
+        modal = document.querySelector('.modal');
+
+  buttonsOpenModal.forEach(el => el.addEventListener('click', openModal));
+  const modalInterval = setTimeout(openModal, 15000);
+  window.addEventListener('scroll', showModalByScroll);
+
+  function showModalByScroll() {
+    if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+      openModal();
+      window.removeEventListener('scroll', showModalByScroll);
+    }
+  };
+
+  function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modal.addEventListener('click', closeModal);
+    document.addEventListener('keydown', closeModal);
+    clearInterval(modalInterval);
+  };
+
+  function closeModal(e) {
+    if (e.target === modal || e.target.classList.contains('modal__close') || e.code === 'Escape') {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+  
+
+  //forms
+  const message = {
+    sucсess: 'Спасибо, мы с вами свяжемся!',
+    error: 'Ошибка. Попробуйте еще раз',
+  }
+
+  const forms = document.querySelectorAll('form');
+  forms.forEach(el => {
+    bindePostData(el);
+  })
+  
+  const postData = async (url, data) => {
+    const result = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: data
+    });
+    return await result.json();
+  }
+
+
+  function bindePostData(form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      //запрос на методе XMLHttpRequest
+      // const request = new XMLHttpRequest();
+      // request.open('POST', 'http://localhost:3000/requests');
+      // request.setRequestHeader('Content-type', 'application/json', 'charset=utf-8');
+      // const formData = new FormData(form);
+      // const obj = {};
+      // formData.forEach((value, key) => {
+      //   obj[key] = value;
+      // });
+      // const json = JSON.stringify(obj);
+      // request.send(json);
+      // request.addEventListener('load', () => {
+      //   if(request.status === 200) {
+      //     console.log(request.response);
+      //     openModal();
+      //     showThanksModal(message.sucсess);
+      //   } else {
+      //     showThanksModal(message.error);
+      //   }
+      //   form.reset();
+      // })
+
+      // запрос на методе fetch
+      const formData = new FormData(form);
+
+      const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+      postData('http://localhost:3000/requests', json)
+      .then(response => {
+        console.log(response);
+        openModal();
+        showThanksModal(message.sucсess);
+      })
+      .catch(() => {
+        showThanksModal(message.error);
+      })
+      .finally(() => {
+        form.reset();
+      })
+    })
+  }
+
+  function showThanksModal(message) {
+    const innerModal = document.querySelector('.modal__dialog');
+    innerModal.classList.add('hide');
+    const thanksModal = document.createElement('div');
+    thanksModal.innerHTML = `
+    <div class="modal__dialog">
+      <div class="modal__content">
+        <div class="modal__close">&times;</div>
+        <div class="modal__title">${message}</div>
+      </div>
+    </div>
+    `;
+    modal.append(thanksModal);
+    setTimeout(() => {
+      thanksModal.remove();
+      innerModal.classList.remove('hide');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }, 4000);
+  }
 })
