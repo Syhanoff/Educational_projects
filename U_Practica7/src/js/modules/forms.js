@@ -1,27 +1,17 @@
-'use strict';
+import { postData } from '../services/services';
 
-function forms() {
-  //forms
+function forms(formSelector, modalSelector) {
+  const modal = document.querySelector(modalSelector);
+  const forms = document.querySelectorAll(formSelector);
+
   const message = {
     sucсess: 'Спасибо, мы с вами свяжемся!',
     error: 'Ошибка. Попробуйте еще раз',
   };
 
-  const forms = document.querySelectorAll('form');
   forms.forEach((el) => {
     bindePostData(el);
   });
-
-  const postData = async (url, data) => {
-    const result = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: data,
-    });
-    return await result.json();
-  };
 
   function bindePostData(form) {
     form.addEventListener('submit', (e) => {
@@ -57,7 +47,6 @@ function forms() {
       postData('http://localhost:3000/requests', json)
         .then((response) => {
           console.log(response);
-          openModal();
           showThanksModal(message.sucсess);
         })
         .catch(() => {
@@ -67,11 +56,12 @@ function forms() {
           form.reset();
         });
     });
-  }
+  };
 
   function showThanksModal(message) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
     const innerModal = document.querySelector('.modal__dialog');
-    innerModal.classList.add('hide');
     const thanksModal = document.createElement('div');
     thanksModal.innerHTML = `
       <div class="modal__dialog">
@@ -81,14 +71,13 @@ function forms() {
         </div>
       </div>
       `;
-    modal.append(thanksModal);
+    innerModal.replaceWith(thanksModal);
     setTimeout(() => {
-      thanksModal.remove();
-      innerModal.classList.remove('hide');
       modal.classList.remove('active');
       document.body.style.overflow = '';
+      thanksModal.replaceWith(innerModal)
     }, 4000);
   };
 };
 
-module.exports = forms;
+export default forms;

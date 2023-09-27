@@ -1,10 +1,17 @@
-'use strict';
+function setZero(num) {
+  if (num >= 0 && num < 10) {
+    return `0${num}`;
+  } else if (num < 0) {
+    return num = 0;
+  } else {
+    return num;
+  };
+};
 
-function timer() {
-  //Timer
+function timer(id, remainHours) {
   // const deadline = '2023-09-03';
   const date = new Date();
-  const deadline = date.setHours(48);
+  const deadline = date.setHours(remainHours);
 
   function getRestTime(end) {
     const difference = end - new Date(),
@@ -19,16 +26,6 @@ function timer() {
       hours,
       minutes,
       seconds
-    };
-  }
-
-  function setZero(num) {
-    if (num >= 0 && num < 10) {
-      return `0${num}`;
-    } else if (num < 0) {
-      return num = 0;
-    } else {
-      return num;
     };
   };
 
@@ -56,7 +53,8 @@ function timer() {
       };
     };
   };
-  setTime('.timer', deadline);
+  setTime(id, deadline);
 };
 
-module.exports = timer;
+export default timer;
+export { setZero };

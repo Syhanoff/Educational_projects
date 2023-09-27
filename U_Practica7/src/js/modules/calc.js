@@ -1,8 +1,4 @@
-'use strict';
-
 function calc() {
-  //Calc
-
   const result = document.querySelector('.calculating__result span');
   let sex;
   let height;
@@ -110,4 +106,4 @@ function calc() {
   getDinamicData('#age');
 };
 
-module.exports = calc;
+export default calc;

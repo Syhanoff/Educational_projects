@@ -1,16 +1,15 @@
-'use strict';
+import { setZero } from './timer';
 
-function slider() {
-  //Slider
-  const btnPrev = document.querySelector('.offer__slider-prev'),
-    btnNext = document.querySelector('.offer__slider-next'),
-    currentNumberSlid = document.querySelector('#current'),
-    totalNumberSlid = document.querySelector('#total'),
-    slideWrapper = document.querySelector('.offer__slider-wrapper'),
-    sliderInnerWrapper = document.querySelector('.offer__slider-inner'),
-    width = window.getComputedStyle(slideWrapper).width,
-    slider = document.querySelector('.offer__slider'),
-    sliders = document.querySelectorAll('.offer__slide');
+function slider({sliderContainer, slide, nextControlBtn, prevControlBtn, currentSlideIndicator, totalSlideIndicator, sliderWrapper, sliderInner}) {
+  const btnPrev = document.querySelector(prevControlBtn),
+        btnNext = document.querySelector(nextControlBtn),
+        currentNumberSlid = document.querySelector(currentSlideIndicator),
+        totalNumberSlid = document.querySelector(totalSlideIndicator),
+        slideWrapper = document.querySelector(sliderWrapper),
+        sliderInnerWrapper = document.querySelector(sliderInner),
+        width = window.getComputedStyle(slideWrapper).width,
+        slider = document.querySelector(sliderContainer),
+        sliders = document.querySelectorAll(slide);
 
   sliderInnerWrapper.style.width = 100 * sliders.length + '%';
   sliders.forEach((slide) => {
@@ -21,16 +20,6 @@ function slider() {
   let offset = 0;
   currentNumberSlid.innerText = setZero(currentIndex);
   totalNumberSlid.innerText = setZero(sliders.length);
-
-  function setZero(num) {
-    if (num >= 0 && num < 10) {
-      return `0${num}`;
-    } else if (num < 0) {
-      return num = 0;
-    } else {
-      return num;
-    };
-  };
 
   btnNext.addEventListener('click', () => {
     if (offset == parseInt(width) * (sliders.length - 1)) {
@@ -80,15 +69,15 @@ function slider() {
     dot.className = 'dot';
     if (i == 0) {
       dot.style.opacity = 1;
-    }
+    };
     indicators.append(dot);
     dots.push(dot);
-  }
+  };
 
   function activeDot() {
     dots.forEach((dot) => (dot.style.opacity = '.5'));
     dots[currentIndex - 1].style.opacity = 1;
-  }
+  };
 
   dots.forEach((dot) => {
     dot.addEventListener('click', (e) => {
@@ -102,4 +91,4 @@ function slider() {
   });
 };
 
-module.exports = slider;
+export default slider;

@@ -1,7 +1,4 @@
-'use strict';
-
 function cards() {
-  //Card
   class Card {
     constructor(scr, alt, title, descr, cost, parentSelector, ...classes) {
       this.scr = scr;
@@ -11,7 +8,7 @@ function cards() {
       this.cost = cost;
       this.parent = document.querySelector(parentSelector);
       this.classes = classes;
-    }
+    };
 
     createNewCard() {
       const element = document.createElement('div');
@@ -20,8 +17,7 @@ function cards() {
         element.classList.add(this.element);
       } else {
         this.classes.forEach((className) => element.classList.add(className));
-      }
-
+      };
       element.innerHTML = `
             <img src=${this.scr} alt=${this.alt}>
             <h3 class="menu__item-subtitle">${this.title}</h3>
@@ -67,4 +63,4 @@ function cards() {
   });
 };
 
-module.exports = cards;
+export default cards;

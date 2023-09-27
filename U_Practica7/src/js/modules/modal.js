@@ -1,13 +1,11 @@
-'use strict';
+function modal(modalSelector, modalTrigger) {
+  const buttonsOpenModal = document.querySelectorAll(modalTrigger),
+        modal = document.querySelector(modalSelector);
 
-function modal() {
-  //Modal
-  const buttonsOpenModal = document.querySelectorAll('[data-modal]'),
-    modal = document.querySelector('.modal');
-
-  buttonsOpenModal.forEach((el) => el.addEventListener('click', openModal));
-  const modalInterval = setTimeout(openModal, 15000);
+  buttonsOpenModal.forEach((el) => el.addEventListener('click', () => openModal()));
+  
   window.addEventListener('scroll', showModalByScroll);
+  const modalInterval = setTimeout(openModal, 15000);
 
   function showModalByScroll() {
     if (
@@ -28,7 +26,7 @@ function modal() {
     document.addEventListener('keydown', closeModal);
     clearInterval(modalInterval);
   };
-
+  
   function closeModal(e) {
     if (
       e.target === modal ||
@@ -41,6 +39,6 @@ function modal() {
   };
 };
 
-module.exports = modal;
+export default modal;
 
 
